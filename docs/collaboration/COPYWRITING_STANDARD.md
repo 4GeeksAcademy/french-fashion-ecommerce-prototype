@@ -1,32 +1,224 @@
 ---
-version: 0.1
-status: DRAFT
+version: 2.0
+status: FROZEN
 owner: EXP-01
+direction: INDUSTRIAL_MAISON_ROUGE
+supersedes: 1.0
 ---
-# Copywriting standard
 
-This is a future normative contract, not approved storefront copy. EXP-01 must replace each `TO_LOCK_IN_EXP01` decision with a versioned, reviewed rule before dependent work begins. Current HTML shell wording is provisional.
+# Copywriting Standard — Industrial Maison Rouge v2.0
 
-| Topic | Rule to approve |
-| --- | --- |
-| Language lock | Choose primary locale, treatment of French terms, translations and `lang` consistency: TO_LOCK_IN_EXP01. |
-| Brand voice | Define audience, tone, degree of editorial language, and examples of acceptable/poor phrasing: TO_LOCK_IN_EXP01. |
-| Product naming | Stable name pattern, uniqueness, variant order and alignment with SKU/product data: TO_LOCK_IN_EXP01. |
-| Category taxonomy | Approve category labels and mapping to the 20 references; avoid near-duplicate labels: TO_LOCK_IN_EXP01. |
-| CTA dictionary | One canonical phrase per action (browse, view, add, continue, purchase) and state: TO_LOCK_IN_EXP01. |
-| Price/currency formatting | Choose currency and locale pattern; use the same format in cards, product, cart and checkout: TO_LOCK_IN_EXP01. Never imply a live charge. |
-| Short descriptions | One concise, factual differentiator; no unsupported materials or benefits: TO_LOCK_IN_EXP01. |
-| Long descriptions | Structured detail, material and use information without repetition or invented claims: TO_LOCK_IN_EXP01. |
-| Materials/use | Name only sourced attributes; distinguish material composition from suggested use: TO_LOCK_IN_EXP01. |
-| Search/filter microcopy | Clear labels, hints, empty state and static-prototype affordance: TO_LOCK_IN_EXP01. Do not promise functioning search/filter if absent. |
-| Cart microcopy | Quantity, unit and line totals, subtotal/tax/total labels, empty/sample state and purchase action: TO_LOCK_IN_EXP01. |
-| Checkout/form microcopy | Stage headings, field labels, required/optional hints, example formatting, privacy and non-payment prototype statement: TO_LOCK_IN_EXP01. |
-| Accessibility copy | Descriptive links, explicit form labels, errors and status text that make sense out of context: TO_LOCK_IN_EXP01. |
-| Alt text | Convey product type and distinguishing visible attributes, omit decorative images, avoid “image of” and unsourced claims: TO_LOCK_IN_EXP01. |
-| SEO title/meta patterns | Unique page title and truthful description patterns tied to visible page content: TO_LOCK_IN_EXP01. |
-| Claims policy | No fabricated provenance, sustainability, scarcity, discount, shipping or payment assertions. Record source for specific claims. |
-| Forbidden copy | No lorem ipsum, placeholder production copy, false functionality, unsupported superlatives or inaccessible “click here.” |
-| Capitalization/punctuation | Lock heading, navigation, button and sentence-case conventions: TO_LOCK_IN_EXP01. |
-| Consistency | Product name, category, price, currency, material and CTA must match across every view and Schema.org. |
+## 1. Language lock
 
-Review the completed dictionary against Home golden reference, then hand the approved version to DISC-02, TRAN-03 and INTEG-04. A DRAFT table is not permission to invent production copy.
+Primary storefront language: **English** (`lang="en"`).
+
+French accents/proper names are allowed only where they are canonical Atelier Vérité names. The approved visual mockup contains French text, but that text is **not canonical copy**.
+
+## 2. Voice
+
+Voice is:
+- architectural;
+- restrained;
+- precise;
+- fashion-editorial;
+- sensual in tension, not erotic;
+- slightly uncanny;
+- commercially direct.
+
+The surreal component lives in **one controlled phrase**, not in every line.
+
+### Good
+- “The structure of desire.”
+- “Form. Tension. Utility. Trace.”
+- “A crimson interruption inside a quieter wardrobe.”
+
+### Avoid
+- purple prose;
+- faux-philosophical paragraphs;
+- excessive French;
+- aggressive “edgy” slogans;
+- luxury superlatives;
+- claims about provenance not supported by canonical data.
+
+## 3. Canonical Home campaign copy
+
+### Eyebrow
+`Industrial Maison Rouge · Study 01`
+
+### H1
+`The structure of desire.`
+
+### Deck
+`Sculptural silhouettes, quiet utility and a crimson interruption define Atelier Vérité’s seasonal study.`
+
+### Primary CTA
+`Shop the collection`
+
+### Optional secondary text link
+`Discover`
+
+### New arrivals eyebrow
+`New study`
+
+### New arrivals heading
+`New arrivals`
+
+### Best sellers eyebrow
+`Core rotation`
+
+### Best sellers heading
+`Best sellers`
+
+### Editorial/category bridge
+Primary line:
+`Form. Tension. Utility. Trace.`
+
+Supporting line:
+`Four ways into the same wardrobe.`
+
+## 4. Brand voice guardrail
+
+The Home may feel conceptual, but it must still be understandable as ecommerce within two seconds.
+
+Product and action labels are never surrealized.
+
+## 5. Product naming
+
+`PRODUCT_CONTENT_CONTRACT.yaml` v1.0 is authoritative.
+
+No renaming between:
+- Home;
+- Catalog;
+- Product;
+- Cart;
+- Checkout;
+- later Schema.org.
+
+## 6. Category taxonomy
+
+Exactly:
+- Footwear
+- Shirts
+- Pants
+- Accessories
+
+Do not use Women/Men as replacement taxonomy in the Home category bridge.
+
+## 7. CTA dictionary
+
+| Intent | Canonical text |
+|---|---|
+| Hero | Shop the collection |
+| Catalog | Browse catalog |
+| Product | View product |
+| Add | Add to cart |
+| Continue | Continue shopping |
+| Checkout/final prototype action | Purchase |
+| Editorial link | Discover |
+
+Do not improvise synonyms without a contract amendment.
+
+## 8. Price/currency
+
+- EUR;
+- display `€240`, `€1,250`;
+- no decimals;
+- values come from PRODUCT_CONTENT_CONTRACT.
+
+## 9. Product descriptions
+
+Home cards:
+- product name;
+- category;
+- price;
+- no long description required;
+- optional one-line short description only if density remains controlled.
+
+Do not invent materials in visible card copy unless copied from canonical data.
+
+## 10. Claims policy
+
+Never imply:
+- free shipping;
+- 30-day returns;
+- secure payment guarantees;
+- sustainability;
+- Made in France;
+- scarcity;
+- sale pricing;
+- real checkout;
+- live account state.
+
+Those elements appear in fashion references but are not supported by this academic prototype.
+
+## 11. Search copy
+
+- label: `Search products`
+- placeholder: `Search the collection`
+- submit: `Search`
+
+Static-prototype behavior must not pretend to provide a functioning dynamic search engine.
+
+## 12. Account copy
+
+If native disclosure is used:
+- summary: `Account`
+- helper: `Static prototype. No sign-in is connected.`
+
+## 13. Footer
+
+Required category links:
+- Footwear
+- Shirts
+- Pants
+- Accessories
+
+Required legal links:
+- Terms and conditions
+- Privacy policy
+- About the brand
+
+Contact:
+- `bonjour@atelier-verite.example`
+
+Prototype clarification:
+`Static academic prototype. No live customer service or payment processing is connected.`
+
+## 14. Accessibility copy
+
+- no “click here”;
+- links must be meaningful out of context;
+- icon controls need accessible names;
+- visible product text matches alt/image identity;
+- form labels remain explicit.
+
+## 15. Alt text
+
+Use canonical image-alt guidance from PRODUCT_CONTENT_CONTRACT where the generated asset conforms.
+
+If a generated asset visibly contradicts the canonical alt description, **reject/regenerate the asset** rather than silently changing product identity.
+
+## 16. SEO pattern
+
+Home title:
+`Atelier Vérité — Contemporary French Fashion`
+
+Home meta description:
+`Explore Atelier Vérité, a fictional contemporary French-fashion prototype featuring an industrial editorial campaign, new arrivals and best sellers.`
+
+No keyword stuffing.
+
+## 17. Generated-reference exclusion
+
+Do not copy from the approved mockup:
+- `Structures du désir`;
+- invented French product names;
+- generated prices;
+- delivery/payment claims;
+- any garbled or invented text.
+
+The mockup controls **atmosphere and composition only**.
+
+## 18. Freeze rule
+
+FROZEN v2.0.

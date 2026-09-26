@@ -1,17 +1,266 @@
-version: 0.1
-status: DRAFT
+version: 1.0
+status: FROZEN
 owner: EXP-01
-purpose: Canonical product data shape; no product records approved.
+frozen_at: 2026-09-25
+purpose: "Canonical fictional product-content data for all storefront views."
+content_basis: "All records are fictional prototype merchandise created for this academic exercise; they are not claims about real commercial goods."
+currency_display: "EUR with euro sign, comma thousands, no decimals"
+category_taxonomy: [Footwear, Shirts, Pants, Accessories]
+size_vocabularies:
+  alpha: [XS, S, M, L, XL]
+  footwear_eu: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"]
+  one_size: [OS]
 product_schema:
-  sku: {type: string, required: true, rule: "stable unique reference; format TO_LOCK_IN_EXP01"}
-  name: {type: string, required: true, rule: "follow COPYWRITING_STANDARD"}
-  category: {type: string, required: true, rule: "approved taxonomy TO_LOCK_IN_EXP01"}
-  price: {type: number, required: true, rule: "nonnegative amount; display per currency rule"}
-  currency: {type: string, required: true, rule: "ISO 4217 code TO_LOCK_IN_EXP01"}
-  sizes: {type: list_of_strings, required: true, rule: "available sizes; vocabulary TO_LOCK_IN_EXP01"}
-  materials: {type: list_of_strings, required: true, rule: "factually sourced material terms"}
-  short_description: {type: string, required: true, rule: "approved copy standard"}
-  long_description: {type: string, required: true, rule: "approved copy standard"}
-  recommended_use: {type: string, required: true, rule: "suggestion, not unsupported claim"}
-  image_alt: {type: string, required: true, rule: "visible attributes per alt text rule"}
-records: []
+  sku: {type: string, required: true, rule: "AV-[category code]-NNN; unique and stable"}
+  name: {type: string, required: true, rule: "unique canonical display name"}
+  category: {type: enum, required: true, values: [Footwear, Shirts, Pants, Accessories]}
+  price: {type: integer, required: true, rule: "nonnegative whole EUR amount"}
+  currency: {type: string, required: true, value: EUR}
+  sizes: {type: list_of_strings, required: true, rule: "use an approved vocabulary"}
+  materials: {type: list_of_strings, required: true, rule: "canonical fictional prototype composition"}
+  short_description: {type: string, required: true, rule: "one concise differentiator"}
+  long_description: {type: string, required: true, rule: "concise factual prototype detail"}
+  recommended_use: {type: string, required: true, rule: "styling suggestion, not performance claim"}
+  image_alt: {type: string, required: true, rule: "visible-attribute description; no inferred provenance/material"}
+  home_groups: {type: list_of_enums, required: false, values: [new_arrivals, best_sellers]}
+records:
+  - sku: AV-FW-001
+    name: "Sillage Loafer"
+    category: Footwear
+    price: 320
+    currency: EUR
+    sizes: ["36", "37", "38", "39", "40", "41", "42"]
+    materials: ["Leather upper", "Leather lining", "Rubber outsole"]
+    short_description: "A low-profile loafer with a clean vamp and softly structured shape."
+    long_description: "Sillage uses a restrained low profile and simple upper; its fictional prototype composition combines leather upper and lining with a rubber outsole."
+    recommended_use: "Style with straight-leg pants, denim or an oversized shirt."
+    image_alt: "Black low-profile loafer with a clean rounded toe"
+    home_groups: [new_arrivals, best_sellers]
+  - sku: AV-FW-002
+    name: "Rivage Sneaker"
+    category: Footwear
+    price: 210
+    currency: EUR
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44"]
+    materials: ["Textile upper", "Suede panels", "Rubber outsole"]
+    short_description: "A quiet low-top sneaker balancing textile panels with tonal suede."
+    long_description: "Rivage uses a low-top profile with layered tonal panels and a simple lace front."
+    recommended_use: "Pair with relaxed pants, denim or soft tailoring."
+    image_alt: "Neutral low-top sneaker with tonal paneling"
+    home_groups: [new_arrivals]
+  - sku: AV-FW-003
+    name: "Orée Ankle Boot"
+    category: Footwear
+    price: 390
+    currency: EUR
+    sizes: ["36", "37", "38", "39", "40", "41", "42"]
+    materials: ["Leather upper", "Textile lining", "Rubber outsole"]
+    short_description: "A minimal ankle boot with a straight shaft and grounded sole."
+    long_description: "Orée keeps the upper visually clean and the shaft close to the ankle."
+    recommended_use: "Wear with cropped pants, long skirts or layered outerwear."
+    image_alt: "Dark ankle boot with a straight shaft and simple sole"
+    home_groups: [best_sellers]
+  - sku: AV-FW-004
+    name: "Élan Mule"
+    category: Footwear
+    price: 240
+    currency: EUR
+    sizes: ["36", "37", "38", "39", "40", "41"]
+    materials: ["Leather upper", "Leather lining", "Synthetic outsole"]
+    short_description: "An open-back mule with a squared profile and restrained finish."
+    long_description: "Élan is defined by an open back and squared front with minimal visible detailing."
+    recommended_use: "Use as a clean finish for wide-leg pants or a simple dress."
+    image_alt: "Dark open-back mule with a squared toe"
+    home_groups: []
+  - sku: AV-FW-005
+    name: "Ligne Derby"
+    category: Footwear
+    price: 340
+    currency: EUR
+    sizes: ["39", "40", "41", "42", "43", "44", "45"]
+    materials: ["Leather upper", "Leather lining", "Rubber outsole"]
+    short_description: "A pared-back derby with a broad toe and low-contrast construction."
+    long_description: "Ligne translates a classic derby into a simpler, wider silhouette."
+    recommended_use: "Style with pleated pants, denim or relaxed suiting."
+    image_alt: "Black lace-up derby shoe with a broad rounded toe"
+    home_groups: []
+  - sku: AV-SH-001
+    name: "Chemise Épure"
+    category: Shirts
+    price: 185
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Cotton poplin"]
+    short_description: "A crisp oversized shirt with a long line and clean collar."
+    long_description: "Chemise Épure uses an oversized body, dropped shoulder and extended hem for a deliberate proportion."
+    recommended_use: "Wear open over a base layer or tucked into tailored pants."
+    image_alt: "White oversized button-up shirt with a clean collar"
+    home_groups: [new_arrivals, best_sellers]
+  - sku: AV-SH-002
+    name: "Chemise Rive"
+    category: Shirts
+    price: 195
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Linen", "Cotton"]
+    short_description: "A relaxed collared shirt with a soft drape and straight hem."
+    long_description: "Chemise Rive is cut for ease through the body with a simple collar and straight finish."
+    recommended_use: "Layer over a tank or wear with loose trousers in warm weather."
+    image_alt: "Light neutral relaxed shirt with a straight hem"
+    home_groups: [new_arrivals]
+  - sku: AV-SH-003
+    name: "Surchemise Atelier"
+    category: Shirts
+    price: 230
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Cotton twill"]
+    short_description: "A structured overshirt with patch pockets and a workwear-influenced line."
+    long_description: "Surchemise Atelier sits between shirt and light jacket with a straighter, more structured body."
+    recommended_use: "Layer over knitwear or a tee with straight-leg pants."
+    image_alt: "Structured neutral overshirt with two patch pockets"
+    home_groups: [best_sellers]
+  - sku: AV-SH-004
+    name: "Blouse Lueur"
+    category: Shirts
+    price: 210
+    currency: EUR
+    sizes: ["XS", "S", "M", "L"]
+    materials: ["Viscose"]
+    short_description: "A fluid collarless blouse with a softly gathered neckline."
+    long_description: "Blouse Lueur uses a collarless neckline and fluid body for a softer silhouette."
+    recommended_use: "Pair with tailored pants or a simple skirt for a lighter proportion."
+    image_alt: "Fluid ivory collarless blouse with soft neckline gathers"
+    home_groups: []
+  - sku: AV-SH-005
+    name: "Chemise Trait"
+    category: Shirts
+    price: 205
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Cotton"]
+    short_description: "A straight striped shirt with precise cuffs and restrained proportions."
+    long_description: "Chemise Trait balances a straight body with a regular collar and clean cuff finish."
+    recommended_use: "Use as a graphic layer with neutral pants or denim."
+    image_alt: "Straight striped button-up shirt with crisp cuffs"
+    home_groups: []
+  - sku: AV-PT-001
+    name: "Pantalon Serein"
+    category: Pants
+    price: 240
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Wool", "Viscose"]
+    short_description: "A relaxed tailored pant with a high rise and soft front pleat."
+    long_description: "Pantalon Serein uses a higher rise, single front pleat and easy straight leg."
+    recommended_use: "Pair with oversized shirting, knitwear or a clean leather shoe."
+    image_alt: "Dark relaxed tailored pants with a high rise and front pleat"
+    home_groups: [new_arrivals, best_sellers]
+  - sku: AV-PT-002
+    name: "Pantalon Arc"
+    category: Pants
+    price: 225
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Cotton twill"]
+    short_description: "A curved-leg cotton pant with a compact waist and fuller volume."
+    long_description: "Pantalon Arc shapes volume through a curved leg while keeping the waist visually clean."
+    recommended_use: "Balance with a shorter shirt, fitted knit or simple outer layer."
+    image_alt: "Neutral curved-leg pants with a clean waistband"
+    home_groups: [new_arrivals]
+  - sku: AV-PT-003
+    name: "Jean Rive"
+    category: Pants
+    price: 190
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Cotton denim"]
+    short_description: "A straight dark-wash jean with minimal finishing and a clean hem."
+    long_description: "Jean Rive keeps the leg straight and the wash visually uniform for a quieter denim option."
+    recommended_use: "Wear with shirting, loafers or a compact jacket."
+    image_alt: "Straight dark-wash jeans with a clean hem"
+    home_groups: [best_sellers]
+  - sku: AV-PT-004
+    name: "Pantalon Plissé"
+    category: Pants
+    price: 255
+    currency: EUR
+    sizes: ["XS", "S", "M", "L"]
+    materials: ["Polyester"]
+    short_description: "A fluid pleated pant with fine vertical texture and an easy line."
+    long_description: "Pantalon Plissé uses fine vertical pleating to create movement through a wide leg."
+    recommended_use: "Pair with a compact top or oversized shirt for proportion contrast."
+    image_alt: "Fluid dark pleated pants with fine vertical texture"
+    home_groups: []
+  - sku: AV-PT-005
+    name: "Pantalon Studio"
+    category: Pants
+    price: 235
+    currency: EUR
+    sizes: ["XS", "S", "M", "L", "XL"]
+    materials: ["Cotton", "Elastane"]
+    short_description: "A straight studio pant with a flat front and slightly cropped length."
+    long_description: "Pantalon Studio has a flat front, straight leg and slightly cropped finish."
+    recommended_use: "Use with loafers, sneakers or a structured overshirt."
+    image_alt: "Straight cropped pants with a clean flat front"
+    home_groups: []
+  - sku: AV-AC-001
+    name: "Sac Cadre"
+    category: Accessories
+    price: 460
+    currency: EUR
+    sizes: ["OS"]
+    materials: ["Leather", "Cotton lining"]
+    short_description: "A structured shoulder bag with a rectangular body and narrow strap."
+    long_description: "Sac Cadre uses a compact rectangular body and narrow shoulder strap with minimal exterior detailing."
+    recommended_use: "Carry as a compact everyday bag with tailored or casual looks."
+    image_alt: "Structured dark rectangular shoulder bag with a narrow strap"
+    home_groups: [new_arrivals, best_sellers]
+  - sku: AV-AC-002
+    name: "Sac Demi-Lune"
+    category: Accessories
+    price: 420
+    currency: EUR
+    sizes: ["OS"]
+    materials: ["Leather", "Cotton lining"]
+    short_description: "A curved shoulder bag with a low profile and softly rounded base."
+    long_description: "Sac Demi-Lune is defined by a low curved profile and minimal hardware."
+    recommended_use: "Use with everyday layers when a compact curved silhouette adds contrast."
+    image_alt: "Dark curved shoulder bag with a low rounded profile"
+    home_groups: [best_sellers]
+  - sku: AV-AC-003
+    name: "Ceinture Ligne"
+    category: Accessories
+    price: 145
+    currency: EUR
+    sizes: ["S", "M", "L"]
+    materials: ["Leather", "Metal buckle"]
+    short_description: "A narrow belt with a plain rectangular buckle and clean edge finish."
+    long_description: "Ceinture Ligne keeps the strap narrow and the buckle simple for a minimal utility accent."
+    recommended_use: "Define the waist of trousers, denim or layered shirting."
+    image_alt: "Narrow dark belt with a simple rectangular buckle"
+    home_groups: [new_arrivals]
+  - sku: AV-AC-004
+    name: "Écharpe Brume"
+    category: Accessories
+    price: 160
+    currency: EUR
+    sizes: ["OS"]
+    materials: ["Wool"]
+    short_description: "A long soft scarf with a plain weave and subtle fringe."
+    long_description: "Écharpe Brume uses a long rectangular format with a quiet surface and short fringe."
+    recommended_use: "Layer over coats, overshirts or knitwear in cooler styling."
+    image_alt: "Long neutral scarf with short fringe"
+    home_groups: []
+  - sku: AV-AC-005
+    name: "Pochette Atelier"
+    category: Accessories
+    price: 195
+    currency: EUR
+    sizes: ["OS"]
+    materials: ["Leather", "Cotton lining"]
+    short_description: "A slim zip pouch with a flat profile and discreet pull."
+    long_description: "Pochette Atelier is a compact flat pouch designed around a simple zip closure and minimal exterior seams."
+    recommended_use: "Carry alone or use inside a larger bag for small essentials."
+    image_alt: "Slim dark zip pouch with a flat rectangular profile"
+    home_groups: []
