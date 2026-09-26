@@ -2,6 +2,15 @@
 
 This is a case-specific COLLABORATIVE_MODE_PILOT for the static five-view assignment. The Control Tower assignment manifest and rubric govern academic state. The [collaboration contract](COLLABORATION_CONTRACT.md), [contract index](CONTRACT_INDEX.yaml), [scope contracts](scopes/EXP-01.yaml), and [work packages](work-packages/EXP-01.md) govern this repository's handoffs.
 
+## Current state
+
+- Collaboration normalization: COMPLETE.
+- EXP-01: COMPLETE.
+- Home Golden Reference: APPROVED.
+- Transversal contracts: FROZEN and released for downstream consumption.
+- DISC-02 / TRAN-03: READY_FOR_ACTIVATION, pending real teammate identity/access binding and branch sync from current `main`.
+- INTEG-04: PARKED until both contributor handoffs are accepted.
+
 ## Complete system architecture
 ```mermaid
 flowchart LR
@@ -38,10 +47,12 @@ flowchart TD
 ORCH-00 decides any contract amendment. EXP-01 is the sole creative-contract publisher before lock. Frozen transversal contracts are immutable to workers; requests use [Deviation and Rescue Protocol](DEVIATION_RESCUE_PROTOCOL.md). INTEG-04's later cross-page HTML ownership is temporal and begins only after DISC-02 and TRAN-03 hand off; this prevents simultaneous writers.
 
 ## Sequence and gates
-1. ORCH-00 accepts the scaffold, binds real contributor identities, and opens EXP-01.
-2. EXP-01 researches references, locks reference/visual/copy/product-content contracts and delivers the rendered Home golden reference. This normalization does none of that creative work.
-3. DISC-02 and TRAN-03 implement in parallel only after all required transversal contracts are APPROVED/FROZEN. Each raises deviations rather than editing those contracts.
-4. INTEG-04 starts only after both contributor handoffs, reconciles SEO/Schema and cross-page conformance, and returns evidence to ORCH-00.
-5. Baseline rubric evaluation/repair precedes any [excellence proposal](EXCELLENCE_PROPOSAL.md). Final evidence is revision-bound.
+
+1. ORCH-00 confirms the real DISC-02 and TRAN-03 contributor identities/access and binds each work package.
+2. Before feature implementation, each owned feature branch is updated from current `main` so it contains the approved Golden Reference and frozen collaboration contracts.
+3. DISC-02 and TRAN-03 implement in parallel within their frozen contracts, raising deviations instead of mutating shared contracts.
+4. Each contributor completes required viewport checks, PR evidence and knowledge handoff.
+5. INTEG-04 starts only after both contributor handoffs are accepted, then reconciles SEO/Schema and cross-page conformance.
+6. Baseline rubric evaluation/repair precedes any Excellence implementation. Final evidence remains revision-bound.
 
 Each process has an explicit [scope YAML](scopes/EXP-01.yaml) and [human work package](work-packages/EXP-01.md). Replace EXP-01 in the link with the assigned process ID.

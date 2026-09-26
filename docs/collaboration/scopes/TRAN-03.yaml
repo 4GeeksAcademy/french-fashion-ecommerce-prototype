@@ -1,21 +1,21 @@
-contract_version: 1
+contract_version: 2
 scope_kind: workspace_operating_contract
 process_id: TRAN-03
-objective: "Implement Cart and Checkout within locked transversal contracts."
+objective: "Implement Cart and Checkout within frozen transversal contracts."
 included: ["cart.html","checkout.html","owned PRs and handoff"]
 excluded: ["Home","Catalog","Product","frozen contracts","cross-page SEO"]
 decision_owner: ORCH-00
 sources_of_truth: ["docs/collaboration/COLLABORATIVE_EXECUTION_PLAN.md", "docs/collaboration/CONTRACT_INDEX.yaml", "Control Tower assignment.yaml and RUBRIC_CONTRACT.yaml"]
 constraints: ["HTML and Tailwind only", "preserve real contributor attribution", "one writer per file at a time", "no unsupported rubric PASS"]
-assumptions: ["three-person team; identities pending", "foundation merged in PR #1"]
-unknowns: ["real contributor identities", "creative approvals pending EXP-01"]
+assumptions: ["three-person team", "EXP-01 complete", "Golden Reference approved", "required transversal contracts FROZEN", "foundation merged in PR #1"]
+unknowns: ["real TRAN-03 contributor identity/access until ORCH-00 binds it"]
 deliverables: ["cart.html","checkout.html"]
 definition_of_done: ["owned deliverables reviewed", "contract conformance evidenced", "required viewport checks recorded", "PR and knowledge handoff complete"]
 acceptance_criteria: ["rubric coverage R13-R16 and shared R01-R03,R07,R17-R19", "no unauthorized writes", "current evidence bound to commit"]
-protected_behavior: ["five linked static views", "shared semantic navigation", "existing feature branch history"]
-forbidden_regressions: ["HTML outside owned scope before handoff", "broken navigation", "framework or backend introduction", "fabricated claims"]
-human_gates: ["real teammate identity/access", "subjective creative approval when applicable"]
-stop_conditions: ["missing prerequisite contract lock", "ownership collision", "contradictory rubric", "unsafe overwrite", "missing evidence"]
+protected_behavior: ["five linked static views", "shared semantic navigation", "existing feature branch history", "frozen transversal contracts"]
+forbidden_regressions: ["HTML outside owned scope before handoff", "broken navigation", "framework or backend introduction", "fabricated claims", "mutation of frozen contracts"]
+human_gates: ["real teammate identity/access bound by ORCH-00 before implementation"]
+stop_conditions: ["unbound contributor identity/access", "feature branch not updated from current main before implementation", "ownership collision", "contradictory rubric", "unsafe overwrite", "missing evidence"]
 escalation_conditions: ["contract deviation", "three similar repair failures", "capability gap", "destructive decision"]
 specialist_refs: ["docs/collaboration/work-packages/TRAN-03.md", "docs/collaboration/DEVIATION_RESCUE_PROTOCOL.md"]
-continuation: "BLOCKED until all required transversal contracts APPROVED/FROZEN; hand off to INTEG-04"
+continuation: "READY_FOR_ACTIVATION after ORCH-00 binds the real contributor and the owned feature branches are updated from current main; hand off to INTEG-04 after reviewed PRs and knowledge handoff."

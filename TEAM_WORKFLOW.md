@@ -10,6 +10,15 @@ Three people collaborate through process responsibility and view ownership. The 
 | TRAN-03 | Cart and Checkout | feature/cart, feature/checkout |
 | INTEG-04 | SEO, Schema.org, cross-page integration after handoff | feature/seo-schema |
 
-Read [execution plan](docs/collaboration/COLLABORATIVE_EXECUTION_PLAN.md), your [scope](docs/collaboration/scopes/EXP-01.yaml), and matching work package. Actual human GitHub identities are pending; do not fabricate contributor attribution. ORCH-00 binds work packages to the real three-person team when access is confirmed.
+## Current collaboration state
 
-Each major part uses a clear branch and PR. Update from main before review, preserve others' commits, resolve conflicts together, and do not force-push over teammate work. The PR states rubric coverage, contract conformance, tested viewports, evidence, deviations, limitations, and handoff. Only ORCH-00 accepts contract changes. DISC-02 and TRAN-03 may not start their view work until transversal contracts are locked. INTEG-04 starts after both handoffs.
+EXP-01 is complete. The Home Golden Reference is approved and the shared Reference, Visual, Copywriting and Product Content contracts are frozen for downstream use.
+
+DISC-02 and TRAN-03 are therefore released by the creative-contract gate, but they must not begin implementation until ORCH-00 has:
+1. confirmed the real GitHub identity/access for each teammate;
+2. bound the teammate to the correct work package; and
+3. ensured the owned feature branches are updated from current `main`.
+
+Read [execution plan](docs/collaboration/COLLABORATIVE_EXECUTION_PLAN.md), [CONTRACT_INDEX](docs/collaboration/CONTRACT_INDEX.yaml), your assigned scope YAML and matching work package. Do not fabricate contributor attribution.
+
+Each major part uses a clear branch and PR. Update from main before review, preserve others' commits, resolve conflicts together, and do not force-push over teammate work. The PR states rubric coverage, contract conformance, tested viewports, evidence, deviations, limitations, and handoff. Only ORCH-00 accepts contract changes. INTEG-04 starts after both handoffs.
