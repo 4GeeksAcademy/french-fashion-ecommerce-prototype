@@ -1,187 +1,224 @@
 ---
-version: 1.0
+version: 2.0
 status: FROZEN
 owner: EXP-01
-frozen_at: 2026-09-25
+direction: INDUSTRIAL_MAISON_ROUGE
+supersedes: 1.0
 ---
 
-# Copywriting standard v1.0
+# Copywriting Standard — Industrial Maison Rouge v2.0
 
-## Language lock
+## 1. Language lock
 
 Primary storefront language: **English** (`lang="en"`).
 
-French proper nouns, accents and product names may remain French when they are part of the fictional Atelier Vérité naming system. Do not add ornamental French phrases when a clear English label is better.
+French accents/proper names are allowed only where they are canonical Atelier Vérité names. The approved visual mockup contains French text, but that text is **not canonical copy**.
 
-## Brand voice
+## 2. Voice
 
-Audience: design-aware adults shopping a fictional contemporary French-fashion collection.
-
-Voice:
+Voice is:
+- architectural;
 - restrained;
 - precise;
-- editorial but not poetic to the point of ambiguity;
-- confident without superlatives;
-- commercial actions are direct.
+- fashion-editorial;
+- sensual in tension, not erotic;
+- slightly uncanny;
+- commercially direct.
 
-Good: “Soft tailoring for transitional days.”  
-Avoid: “The most exquisite Parisian essential you will ever own.”
+The surreal component lives in **one controlled phrase**, not in every line.
 
-## Product naming
+### Good
+- “The structure of desire.”
+- “Form. Tension. Utility. Trace.”
+- “A crimson interruption inside a quieter wardrobe.”
 
-- Every canonical product has one stable unique name.
-- Product name order: **distinctive model name + product type only when needed for clarity**.
-- Keep accents consistent.
-- Never rename a product between Home, Catalog, Product, Cart, Checkout or Schema.org.
-- SKU is the stable reference identifier.
+### Avoid
+- purple prose;
+- faux-philosophical paragraphs;
+- excessive French;
+- aggressive “edgy” slogans;
+- luxury superlatives;
+- claims about provenance not supported by canonical data.
 
-## Category taxonomy
+## 3. Canonical Home campaign copy
 
-Exactly four canonical storefront categories:
+### Eyebrow
+`Industrial Maison Rouge · Study 01`
+
+### H1
+`The structure of desire.`
+
+### Deck
+`Sculptural silhouettes, quiet utility and a crimson interruption define Atelier Vérité’s seasonal study.`
+
+### Primary CTA
+`Shop the collection`
+
+### Optional secondary text link
+`Discover`
+
+### New arrivals eyebrow
+`New study`
+
+### New arrivals heading
+`New arrivals`
+
+### Best sellers eyebrow
+`Core rotation`
+
+### Best sellers heading
+`Best sellers`
+
+### Editorial/category bridge
+Primary line:
+`Form. Tension. Utility. Trace.`
+
+Supporting line:
+`Four ways into the same wardrobe.`
+
+## 4. Brand voice guardrail
+
+The Home may feel conceptual, but it must still be understandable as ecommerce within two seconds.
+
+Product and action labels are never surrealized.
+
+## 5. Product naming
+
+`PRODUCT_CONTENT_CONTRACT.yaml` v1.0 is authoritative.
+
+No renaming between:
+- Home;
+- Catalog;
+- Product;
+- Cart;
+- Checkout;
+- later Schema.org.
+
+## 6. Category taxonomy
+
+Exactly:
 - Footwear
 - Shirts
 - Pants
 - Accessories
 
-Do not create near-duplicates such as “Shoes” beside “Footwear” or “Trousers” beside “Pants” in canonical data. Editorial copy may use ordinary synonyms only when it does not function as taxonomy.
+Do not use Women/Men as replacement taxonomy in the Home category bridge.
 
-## CTA dictionary
+## 7. CTA dictionary
 
-| Intent | Canonical copy |
-| --- | --- |
-| Main campaign | Shop the collection |
-| Catalog navigation | Browse catalog |
-| Product card/detail | View product |
-| Add action | Add to cart |
-| Continue after cart | Continue shopping |
-| Checkout entry/final prototype action | Purchase |
-| Editorial discovery | Discover |
+| Intent | Canonical text |
+|---|---|
+| Hero | Shop the collection |
+| Catalog | Browse catalog |
+| Product | View product |
+| Add | Add to cart |
+| Continue | Continue shopping |
+| Checkout/final prototype action | Purchase |
+| Editorial link | Discover |
 
-Do not alternate between “Buy now”, “Shop now”, “Get yours”, etc. for the same action.
+Do not improvise synonyms without a contract amendment.
 
-## Price and currency
+## 8. Price/currency
 
-- Currency: **EUR** (`EUR`).
-- Display pattern: `€240`, `€1,250`; no decimals for this prototype.
-- Canonical numeric values live in PRODUCT_CONTENT_CONTRACT.yaml.
-- Never imply tax, discount, shipping or payment terms that are not explicitly defined by the owning transactional view.
+- EUR;
+- display `€240`, `€1,250`;
+- no decimals;
+- values come from PRODUCT_CONTENT_CONTRACT.
 
-## Product descriptions
+## 9. Product descriptions
 
-### Short
-- One sentence.
-- 8–20 words preferred.
-- State silhouette, construction idea or styling role.
-- No unsupported performance, sustainability, rarity or origin claims.
+Home cards:
+- product name;
+- category;
+- price;
+- no long description required;
+- optional one-line short description only if density remains controlled.
 
-### Long
-- 2–4 concise sentences.
-- Explain silhouette/construction, material composition from canonical prototype data and intended styling context.
-- Do not repeat price or CTA language.
+Do not invent materials in visible card copy unless copied from canonical data.
 
-## Fictional product claims policy
+## 10. Claims policy
 
-The 20 products are explicitly **fictional prototype merchandise created for this academic exercise**. Their names, prices, sizes and material compositions are canonical design data, not claims about real commercial goods.
+Never imply:
+- free shipping;
+- 30-day returns;
+- secure payment guarantees;
+- sustainability;
+- Made in France;
+- scarcity;
+- sale pricing;
+- real checkout;
+- live account state.
 
-Do not attach real-world provenance, certifications, sustainability claims, “Made in France”, scarcity, discount, shipping guarantees or other factual claims that would require external evidence.
+Those elements appear in fashion references but are not supported by this academic prototype.
 
-## Materials and recommended use
+## 11. Search copy
 
-- Materials must match the canonical product record exactly.
-- Recommended use is phrased as styling guidance, not a performance guarantee.
-- Prefer “Designed for layered everyday styling” over “Keeps you warm in all weather.”
+- label: `Search products`
+- placeholder: `Search the collection`
+- submit: `Search`
 
-## Search and filters
+Static-prototype behavior must not pretend to provide a functioning dynamic search engine.
 
-Search:
-- label: “Search products”
-- placeholder: “Search the collection”
+## 12. Account copy
 
-Filter labels:
-- “Category”
-- “Size”
+If native disclosure is used:
+- summary: `Account`
+- helper: `Static prototype. No sign-in is connected.`
 
-Static prototype rule: visible controls may demonstrate expected UI, but copy must not promise live filtering/search behavior when none exists.
+## 13. Footer
 
-## Cart
+Required category links:
+- Footwear
+- Shirts
+- Pants
+- Accessories
 
-Canonical labels:
-- Unit price
-- Quantity
-- Line total
-- Subtotal
-- Tax
-- Total
-- Purchase
+Required legal links:
+- Terms and conditions
+- Privacy policy
+- About the brand
 
-If sample cart content is prefilled, it should be clearly understandable as prototype state without pretending persistence.
+Contact:
+- `bonjour@atelier-verite.example`
 
-## Checkout
+Prototype clarification:
+`Static academic prototype. No live customer service or payment processing is connected.`
 
-Visible stage headings:
-1. Personal details
-2. Shipping address
-3. Card payment details
+## 14. Accessibility copy
 
-The final transactional view must state that it is an academic prototype and does not process a real payment.
+- no “click here”;
+- links must be meaningful out of context;
+- icon controls need accessible names;
+- visible product text matches alt/image identity;
+- form labels remain explicit.
 
-## Accessibility copy
+## 15. Alt text
 
-- Link text should make sense out of context.
-- Form controls require explicit labels.
-- Error/status text must name the problem and next action.
-- Avoid “click here”, icon-only text alternatives and vague “More”.
+Use canonical image-alt guidance from PRODUCT_CONTENT_CONTRACT where the generated asset conforms.
 
-## Alt text
+If a generated asset visibly contradicts the canonical alt description, **reject/regenerate the asset** rather than silently changing product identity.
 
-For meaningful product/editorial imagery:
-- describe visible clothing/product type plus a distinguishing visible attribute;
-- keep it concise;
-- do not begin with “image of”;
-- do not infer material, provenance or model identity from appearance alone.
+## 16. SEO pattern
 
-Decorative imagery uses empty alt text only when it adds no information.
-
-## SEO patterns
-
-### Title
-`{Page purpose} — Atelier Vérité`
-
-Home exception:
+Home title:
 `Atelier Vérité — Contemporary French Fashion`
 
-### Meta description
-- unique per page;
-- roughly 120–160 characters when practical;
-- describe visible static content honestly;
-- no keyword stuffing or unsupported marketing claims.
+Home meta description:
+`Explore Atelier Vérité, a fictional contemporary French-fashion prototype featuring an industrial editorial campaign, new arrivals and best sellers.`
 
-SEO/Schema integration remains owned by INTEG-04; EXP-01 only keeps Home metadata truthful.
+No keyword stuffing.
 
-## Capitalization and punctuation
+## 17. Generated-reference exclusion
 
-- Navigation: Title case where natural.
-- Section headings: sentence case.
-- Utility labels may use uppercase with letter spacing.
-- Buttons/CTAs: sentence case.
-- Product names preserve canonical capitalization.
-- Avoid exclamation marks unless a concrete content need justifies one.
+Do not copy from the approved mockup:
+- `Structures du désir`;
+- invented French product names;
+- generated prices;
+- delivery/payment claims;
+- any garbled or invented text.
 
-## Forbidden copy
+The mockup controls **atmosphere and composition only**.
 
-- lorem ipsum;
-- placeholder production copy;
-- false functionality;
-- unsupported superlatives;
-- fabricated reviews/ratings;
-- false discounts, urgency or scarcity;
-- fake shipping/payment guarantees;
-- “click here”.
+## 18. Freeze rule
 
-## Consistency gate
-
-Before handoff, compare every product name, SKU, category, price, currency, size vocabulary, material term and CTA against PRODUCT_CONTENT_CONTRACT.yaml and this standard.
-
-## Freeze rule
-
-Status is **FROZEN**. Any later change requires the deviation protocol, ORCH-00 disposition, version increment and revalidation of affected copy.
+FROZEN v2.0.

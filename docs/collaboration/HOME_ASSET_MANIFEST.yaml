@@ -1,0 +1,149 @@
+version: '1.1'
+status: FROZEN
+owner: EXP-01
+direction: INDUSTRIAL_MAISON_ROUGE
+asset_gate: CLOSED_CANONICAL
+reference_asset:
+  id: REF-HOME-IMR-001
+  path: assets/reference/industrial-maison-rouge-home-reference.png
+  role: conditioning_only
+  status: CANONICAL_REFERENCE
+  production_use: forbidden
+production_assets:
+- id: HERO-IMR-001
+  path: assets/home/hero-industrial-maison-rouge.webp
+  kind: campaign_hero
+  status: CANONICAL
+  actual_dimensions: 1586x992
+  sha256: ea97c92647b600ed3ba90996d1ca460d893c171ec47e6b697274c761aadbd749
+  bytes: 175062
+  source_generation_file: editorial_brutalista_con_tela_carmesí.png
+  crimson_weight: strong
+  safe_zone: left 38-46% for H1/deck/CTA
+- id: PROD-AV-FW-001
+  path: assets/home/products/av-fw-001-sillage-loafer.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: b1f89165a6f79e3e9a5d47fead293dd5d99679b357808756b5272c886eece04c
+  bytes: 295910
+  source_generation_file: mocasín_negro_en_arquitectura_brutalista.png
+  sku: AV-FW-001
+  name: Sillage Loafer
+- id: PROD-AV-FW-002
+  path: assets/home/products/av-fw-002-rivage-sneaker.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: f2b2059ab300ac9dc02d77bf0a3286f6b707c736535285285a1a1f95a1977f6f
+  bytes: 297040
+  source_generation_file: zapatillas_crema_en_arquitectura_brutalista.png
+  sku: AV-FW-002
+  name: Rivage Sneaker
+- id: PROD-AV-FW-003
+  path: assets/home/products/av-fw-003-oree-ankle-boot.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: 75a42c801cb8af02fd5df46cb9bc8434d9d96ef53b438f2367b68322de4abdb7
+  bytes: 267512
+  source_generation_file: bota_negra_en_arquitectura_brutalista.png
+  sku: AV-FW-003
+  name: Orée Ankle Boot
+- id: PROD-AV-SH-001
+  path: assets/home/products/av-sh-001-chemise-epure.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: 03fac9f80768578cdd4365b2f7069045baf1939c355fea9ee335c4fdd5fe6f69
+  bytes: 178608
+  source_generation_file: editorial_brutalista_en_concreto_y_rojo.png
+  sku: AV-SH-001
+  name: Chemise Épure
+- id: PROD-AV-SH-002
+  path: assets/home/products/av-sh-002-chemise-rive.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: ca03301e598c0743c94a678c25dac7cfc759faa3fa6c61215ec20ab5df23a5d7
+  bytes: 322946
+  source_generation_file: camisa_de_lino_bajo_el_sol_brutalista.png
+  sku: AV-SH-002
+  name: Chemise Rive
+- id: PROD-AV-SH-003
+  path: assets/home/products/av-sh-003-surchemise-atelier.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: 1643c85678e95e13f1820347fa467e94e2dedefabcc2a479d0ea491564ee7bb7
+  bytes: 214104
+  source_generation_file: surchemise_negra_en_arquitectura_brutalista.png
+  sku: AV-SH-003
+  name: Surchemise Atelier
+- id: PROD-AV-PT-001
+  path: assets/home/products/av-pt-001-pantalon-serein.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: 80d0bc80f12f58e53181b5f1e0d3384b9df3e415fb2d0a0a359290d1e44ee6ad
+  bytes: 242114
+  source_generation_file: editorial_de_sastrería_en_concreto_brutalista.png
+  sku: AV-PT-001
+  name: Pantalon Serein
+- id: PROD-AV-PT-003
+  path: assets/home/products/av-pt-003-jean-rive.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: 66e3971e5eb309bad8e93a320ac2dd96ddac747bc0648cee0a21628f662b6f7c
+  bytes: 349444
+  source_generation_file: jeans_índigo_sobre_concreto_brutalista.png
+  sku: AV-PT-003
+  name: Jean Rive
+- id: PROD-AV-AC-001
+  path: assets/home/products/av-ac-001-sac-cadre.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: 649caf0745cde6ec5b67ba9d261858b8528fc913bd331d98b4a92462b703abbf
+  bytes: 270338
+  source_generation_file: bolso_negro_en_arquitectura_brutalista.png
+  sku: AV-AC-001
+  name: Sac Cadre
+- id: PROD-AV-AC-002
+  path: assets/home/products/av-ac-002-sac-demi-lune.webp
+  kind: product
+  status: CANONICAL
+  actual_dimensions: 1122x1402
+  sha256: bf5254de706bbe4eca3c6b85b9a6aa843901ea829164fd84e6609528c18d01b8
+  bytes: 289798
+  source_generation_file: a_minimalist_moody_high_end_product_studio_shot_28_batch_7.png
+  sku: AV-AC-002
+  name: Sac Demi-Lune
+rail_selection:
+  new_arrivals:
+  - AV-FW-001
+  - AV-FW-002
+  - AV-SH-001
+  - AV-SH-002
+  - AV-PT-001
+  - AV-AC-001
+  best_sellers:
+  - AV-FW-001
+  - AV-FW-003
+  - AV-SH-001
+  - AV-SH-003
+  - AV-PT-001
+  - AV-PT-003
+  - AV-AC-001
+  - AV-AC-002
+category_bridge_reuse:
+  Footwear: AV-FW-003
+  Shirts: AV-SH-003
+  Pants: AV-PT-003
+  Accessories: AV-AC-001
+final_asset_gate:
+  required_status: CANONICAL
+  hotlinks_allowed_for_final: false
+  result: PASS
+  canonical_assets: 11

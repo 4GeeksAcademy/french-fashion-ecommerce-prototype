@@ -1,153 +1,319 @@
 ---
-version: 1.0
+version: 2.0
 status: FROZEN
 owner: EXP-01
-frozen_at: 2026-09-25
+direction: INDUSTRIAL_MAISON_ROUGE
+supersedes: 1.0
 golden_reference: index.html
+mandatory_child: docs/collaboration/EFFECTS_CONTRACT.md
 ---
 
-# Visual contract — Quiet Atelier v1.0
+# Visual Contract — Industrial Maison Rouge v2.0
 
-This contract is normative for all five storefront views after Golden Reference approval. Home is the only implemented reference in EXP-01; dependent views must not propagate it before the human gate is accepted.
+## 1. Design objective
 
-## Core tokens
+Create a responsive fashion ecommerce Home that feels like a brutalist exhibition system interrupted by a controlled crimson/surreal gesture.
 
-| Area | Locked rule |
-| --- | --- |
-| Color | Paper `#F4F0E8` for primary page surface; Ivory `#FCFAF6` for elevated/light surfaces; Ink `#171614` for primary text; Stone `#CFC7BA` for separators; Muted `#6F6A63` for secondary text; Wine `#6F2634` for restrained accent/action emphasis. No gradients required. |
-| Contrast | Body copy must use Ink or sufficiently dark Muted on Paper/Ivory. Wine is never the only carrier of state. |
-| Typography | Display: serif stack (`ui-serif, Georgia, Cambria, "Times New Roman", serif`). Utility/body: sans stack (`ui-sans-serif, system-ui, sans-serif`). Display uses normal/medium weight; utility labels use medium/semibold with restrained tracking. |
-| Type scale | Display hero: 2.75rem mobile → 4.75rem desktop; section title: 2rem → 3rem; card title: 1rem; body: 0.875–1rem; utility label: 0.6875–0.75rem uppercase with tracking. |
-| Line height | Display ~0.95–1.05; body 1.5–1.7; utilities 1.2–1.4. |
-| Spacing | Base rhythm: 4, 8, 12, 16, 24, 32, 48, 64, 96 px. Section spacing: 64 px mobile, 88–112 px desktop where content allows. |
-| Containers | Primary max width: 1440 px; readable copy max width: ~42rem. Side gutters: 16 px mobile, 24–32 px tablet, 40–48 px desktop. |
-| Grid | Use CSS/Tailwind grid for page structure; product rails use horizontal grid-flow columns with overflow-x auto. Desktop catalog later resolves to four columns per rubric. |
-| Borders | 1 px low-contrast Stone separators. Strong Ink border only for primary controls or deliberate emphasis. |
-| Radius | Default 0–2 px. Avoid rounded-card visual language. Circular radius permitted only for icon-only utility controls where needed. |
-| Shadow | None by default. Do not use shadows to create hierarchy. |
-| Images | Hero editorial crop: portrait/near 4:5; product media: 4:5. Use `object-cover`; preserve meaningful subject focal point. |
-| Iconography | Inline text/symbols only unless an owned SVG is required. Keep stroke/simple geometry; no decorative icon packs required. |
+Hierarchy must remain commercial and immediately readable.
 
-## Header / navigation
+## 2. Canonical palette
 
-- Header uses Paper/Ivory with a thin bottom border.
-- Utility strip may use Ink background with Ivory text.
-- Brand wordmark is text, uppercase, letter-spaced, not an imitation of a reference logo.
-- Desktop hierarchy: brand → search → Catalog → Account → Cart.
-- Mobile/tablet may wrap search to a second row; wrapping is preferred to cramped controls.
-- Search remains a real labeled `input type="search"`; no fake icon-only search.
-- Account menu should use native semantic disclosure (`details/summary`) if a menu is shown without JavaScript.
-- Header must never obscure content.
+| Token | Hex | Role |
+|---|---:|---|
+| Ink | `#11110F` | primary dark surface / text |
+| Charcoal | `#1B1A18` | secondary dark surface |
+| Concrete | `#77726C` | muted architectural tone |
+| Steel | `#A6A19A` | secondary text / borders on dark |
+| Bone | `#E8E1D8` | primary light editorial surface |
+| Ivory | `#F5F0E8` | high-legibility light surface |
+| Crimson | `#8B1020` | primary accent / CTA |
+| Crimson Deep | `#5F0B15` | hover / deep accent |
+| Warm White | `#FFFDF8` | high-contrast text on dark |
 
-## Footer
+### Surface proportions
+Target at desktop:
+- dark surfaces: ~45–55%;
+- light surfaces: ~35–45%;
+- UI crimson fill: <=8% of visible interface area;
+- crimson may occupy more inside campaign photography, but should not visually dominate the entire page.
 
-- Ink surface with Ivory primary text and muted warm secondary text.
-- Required groups remain: Categories, Legal, Contact.
-- Desktop: three or four columns; mobile: stacked.
-- Links use visible focus states and underline or clear contrast on hover/focus.
-- Contact copy may identify the prototype nature where useful, but must not imply a live service channel.
+### Forbidden colors
+- cyan;
+- electric blue;
+- neon green/pink;
+- saturated multicolor gradients.
 
-## Product card
+## 3. Typography
 
-Order is fixed:
-1. 4:5 media;
-2. category / small utility label when useful;
+No external font dependency is required.
+
+### Display stack
+`Didot, "Bodoni MT", "Times New Roman", serif`
+
+Use for:
+- H1;
+- major section headings;
+- editorial category labels;
+- brand wordmark where appropriate.
+
+### Utility/body stack
+`"Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif`
+
+Use for:
+- nav;
+- search;
+- product metadata;
+- price;
+- labels;
+- CTA;
+- body copy.
+
+### Type scale
+
+| Role | 390 | 768 | 1440 |
+|---|---:|---:|---:|
+| Hero H1 | 3.15rem | 4.6rem | 6.5rem |
+| Section H2 | 2.1rem | 2.5rem | 3.25rem |
+| Editorial tile title | 1.75rem | 2rem | 2.5rem |
+| Product name | 0.92rem | 0.95rem | 1rem |
+| Body | 0.9rem | 0.95rem | 1rem |
+| Utility label | 0.65–0.72rem | same | same |
+
+### Typography behavior
+- H1 line-height: `0.88–0.96`;
+- section titles: `0.95–1.05`;
+- body: `1.5–1.65`;
+- uppercase utility tracking: `0.12em–0.22em`;
+- do not use faux bold Didone display text;
+- body paragraphs max ~60–68 characters per line.
+
+## 4. Grid
+
+### Desktop 1440+
+- 12-column conceptual grid;
+- outer gutter: 40–48 px;
+- section bounds can extend edge-to-edge;
+- max content width: 1600 px;
+- borders may define columns explicitly.
+
+### Tablet 768
+- 6-column conceptual grid;
+- outer gutter: 24–32 px.
+
+### Mobile 390
+- 4-column conceptual grid;
+- outer gutter: 16 px;
+- no page-level horizontal overflow.
+
+## 5. Geometry
+
+- default radius: `0px`;
+- permitted micro-radius: maximum `2px` only where browser controls need it;
+- shadows: **none**;
+- primary separators: 1 px;
+- strong separators: 1 px Ink/Steel;
+- use rectangular framing and hard boundaries.
+
+## 6. Header
+
+### Desktop
+- black/Ink background;
+- 64–72 px target height;
+- left utility/nav group;
+- centered brand;
+- right search/account/cart utilities;
+- 1 px bottom border in dark Steel/Concrete.
+
+### Mobile/tablet
+- brand and utilities remain readable;
+- search may occupy a second row;
+- wrapping is preferred to cramped controls;
+- no hamburger is required if a compact wrap remains usable;
+- account may use native `details/summary`;
+- no JavaScript dependency.
+
+## 7. Hero
+
+### Composition
+- full-width architectural campaign image;
+- black tailoring / raw concrete / crimson sculptural interruption;
+- subject primarily right of center;
+- left 38–46% is text-safe;
+- a subtle flat black overlay may be used for contrast; no decorative gradient required.
+
+### Height
+- 390: 560–620 px;
+- 768: 620–680 px;
+- 1440: 680–740 px.
+
+### Content
+- one eyebrow;
+- one H1;
+- one concise deck;
+- one primary CTA;
+- optional micro-index / study label;
+- no carousel requirement.
+
+### CTA
+- Crimson background;
+- Warm White text;
+- minimum 44 px height;
+- hard rectangular geometry.
+
+## 8. Product rails
+
+Both required rails remain horizontal.
+
+### Media
+- 4:5;
+- local production image;
+- `object-cover`;
+- explicit width/height or aspect-ratio to prevent layout shift.
+
+### Card anatomy
+1. image;
+2. category label;
 3. product name;
 4. price;
-5. optional compact text link.
+5. optional small action mark (`+` or `View product`) if semantic nesting remains valid.
 
-Rules:
-- Entire card may be a product link only if nested interactive elements are avoided.
-- No ratings, discounts, scarcity labels or badges unless canonically present and truthful.
-- Price is never visually detached from product name.
-- Cards use border/space hierarchy, not elevated panels.
-- Image alt text follows COPYWRITING_STANDARD v1.0.
+### Card styling
+- no rounded card container;
+- no drop shadow;
+- no fake ratings;
+- no discount badges;
+- no decorative borders around the whole card unless used as a 1 px structural separator.
 
-## Horizontal rails
+### Rail density
+- 390: ~1.15–1.25 cards visible;
+- 768: ~2.15–2.35 cards visible;
+- 1440: ~4.7–5.2 cards visible.
 
-Use:
-- `overflow-x-auto`;
-- grid-flow columns;
-- mobile card width around 78–84vw;
-- tablet around 42–46vw;
-- desktop around 23–25% of container.
+Intentional rail overflow is permitted. Page overflow is not.
 
-The rail itself may overflow horizontally; the **page must not**. Provide visible continuation by allowing the next card edge or multiple cards to appear.
+## 9. Light rail / dark rail rhythm
 
-## Buttons / links
+Preferred Home rhythm:
+- New arrivals: Bone/Ivory surface, dark text;
+- Best sellers: Ink/Charcoal surface, Warm White text;
+- alternate surfaces create architectural sectional rhythm.
 
-### Primary
-- Ink background, Ivory text.
-- Minimum height ~44 px.
-- Square/subtle radius.
-- Hover/focus may invert to Wine or use Wine outline only if contrast remains sufficient.
+## 10. Editorial/category bridge
 
-### Secondary
-- Transparent background, Ink border/text.
-- Same minimum target height.
+Use the canonical categories:
+- Footwear;
+- Shirts;
+- Pants;
+- Accessories.
 
-### Text links
-- Underline offset or border-bottom treatment.
-- Never rely only on color to communicate interactivity.
+Desktop:
+- 4 structural tiles or one 2+2 asymmetric composition;
+- hard separators;
+- imagery may be reused as crops from production product assets.
 
-### Disabled
-- Use lowered contrast plus semantic `disabled`/aria state where applicable.
-- Do not simulate unavailable functionality with active-looking controls.
+Mobile:
+- 2x2 or stacked;
+- labels remain visible;
+- avoid hiding category meaning behind hover.
 
-## Inputs / selects / forms
+## 11. Footer
 
-- Persistent visible labels, except search may use an sr-only label paired with a specific placeholder.
-- Border: Stone default, Ink/Wine focus.
-- Height: minimum ~44 px.
-- Background: Ivory.
-- Error copy sits below the field and is not color-only.
-- Native select behavior is preferred over custom JavaScript.
-- Form groups use 16–24 px internal gap and 32–48 px section gap.
+- Ink/Charcoal background;
+- Warm White primary text;
+- Steel secondary text;
+- 1 px top border;
+- 3–4 desktop columns;
+- stacked mobile;
+- must include assignment-required Categories, Legal and Contact content;
+- no unsupported service promises.
 
-## Focus / hover
+## 12. Imagery
 
-- Every keyboard-focusable element must expose a visible `focus-visible` treatment.
-- Preferred focus: 2 px Ink or Wine ring with 2 px offset.
-- Hover may underline, invert surface, or slightly reduce image opacity; core information/action must remain visible without hover.
+### General
+- restrained low-key lighting;
+- concrete, cement, stone or bone studio surfaces;
+- black/charcoal garments dominant;
+- crimson appears selectively;
+- no visible third-party branding;
+- no watermarks;
+- no typography baked into production assets.
 
-## Motion
+### Human imagery
+- editorial poses may be slightly uncanny;
+- anatomy must remain plausible;
+- no body horror;
+- no extreme distortion;
+- garments must remain legible.
 
-- Motion is optional and non-essential.
-- If used, limit to opacity/transform transitions around 150–250 ms.
-- Do not animate layout, auto-scroll product rails, or introduce motion required for comprehension.
-- Respect `prefers-reduced-motion` if non-trivial motion is added later.
+### Product still life
+- maintain product silhouette;
+- hard/raw architectural background;
+- no unrelated props that obscure the item.
 
-## Responsive contract
+## 13. Crimson usage
 
-### 390 x 844
-- No page-level horizontal scroll.
-- Main gutters: 16 px.
-- Hero stacks copy then media.
-- Product rails remain horizontal.
-- Footer stacks.
-- Header is allowed to wrap into two rows.
+UI crimson may be used for:
+- primary CTA;
+- focus ring;
+- tiny card action mark;
+- selected micro-label;
+- single rule/border;
+- hover accent.
 
-### 768 x 1024
-- Main gutters: 24–32 px.
-- Hero may stack or split; Home v1.0 keeps a balanced stacked/tablet composition unless content is clearly improved by split.
-- Product rails expose ~2 cards.
-- Footer may use 2 columns.
+Do not use crimson simultaneously for:
+- full nav;
+- full footer;
+- full product rail;
+- all typography.
 
-### 1440 x 900
-- Main gutters: 40–48 px.
-- Hero uses a two-column editorial split.
-- Product rails expose ~4 cards.
-- Footer uses 3–4 columns.
+## 14. Accessibility
 
-## Golden Reference conformance
+- normal body copy contrast target >=4.5:1;
+- large display text >=3:1;
+- visible keyboard focus independent of hover;
+- minimum practical touch target ~44 px for controls;
+- meaningful images require alt text;
+- decorative imagery uses empty alt only when genuinely decorative;
+- no essential information encoded by crimson alone.
 
-Home may be accepted only if:
-- required content from R03–R07 is present where EXP-01 owns it;
-- the hero, rails and footer visually follow the tokens above;
-- typography, color, spacing and control styles are internally consistent;
-- the three required renders have no material defect;
-- copy and canonical product data match their frozen contracts.
+## 15. Responsive acceptance
 
-## Freeze rule
+### 390x844
+- no page overflow;
+- header usable;
+- hero text readable over image;
+- primary CTA visible without collision;
+- rails intentionally scroll inside their own containers;
+- one full product card + continuation cue;
+- category tiles readable;
+- footer usable.
 
-Status is **FROZEN**. Any amendment after this point requires the deviation protocol, ORCH-00 decision, a version increment and revalidation of affected pages.
+### 768x1024
+- no page overflow;
+- hero retains architectural tension;
+- roughly two product cards plus continuation cue;
+- no awkward orphaned labels;
+- header search remains usable.
+
+### 1440x900
+- hero reads as full-width fashion campaign;
+- H1 is visually dominant but not clipped;
+- ~5 cards visible in rails;
+- dark/light/crimson rhythm is apparent;
+- no content appears like a generic card dashboard.
+
+## 16. Visual failure conditions
+
+FAIL if:
+- the result looks like Quiet Atelier v1 with only a red button;
+- crimson dominates;
+- concrete/industrial cues disappear;
+- surrealism becomes collage/noise;
+- cards become rounded SaaS components;
+- typography becomes illegible or overly decorative;
+- product commerce hierarchy is weakened;
+- page-level overflow exists.
+
+## 17. Freeze rule
+
+FROZEN v2.0. Changes require versioned amendment and affected-render revalidation.

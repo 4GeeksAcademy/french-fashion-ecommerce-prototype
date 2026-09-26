@@ -1,25 +1,77 @@
-version: 1
+version: 2
 mode: COLLABORATIVE_MODE_PILOT
-contracts:
+process: EXP-01
+visual_direction: INDUSTRIAL_MAISON_ROUGE
+decision:
+  selected_by: human
+  selected_at: 2026-09-25
+  deviation_record: docs/collaboration/deviations/EXP-01-DR-001-industrial-maison-rouge.md
+transversal_contracts:
   REFERENCE_CONTRACT:
     path: docs/collaboration/REFERENCE_CONTRACT.md
     owner: EXP-01
-    version: 1.0
+    version: 2.0
     status: FROZEN
+    supersedes: 1.0
   VISUAL_CONTRACT:
     path: docs/collaboration/VISUAL_CONTRACT.md
     owner: EXP-01
-    version: 1.0
+    version: 2.0
     status: FROZEN
+    supersedes: 1.0
   COPYWRITING_STANDARD:
     path: docs/collaboration/COPYWRITING_STANDARD.md
     owner: EXP-01
-    version: 1.0
+    version: 2.0
     status: FROZEN
+    supersedes: 1.0
   PRODUCT_CONTENT_CONTRACT:
     path: docs/collaboration/PRODUCT_CONTENT_CONTRACT.yaml
     owner: EXP-01
     version: 1.0
     status: FROZEN
-allowed_statuses: [DRAFT, APPROVED, FROZEN, SUPERSEDED]
-lock_note: "EXP-01 creative contracts frozen on feature/home; propagation remains blocked until the Home Golden Reference receives the final human approval gate."
+    unchanged: true
+mandatory_child_contracts:
+  EFFECTS_CONTRACT:
+    path: docs/collaboration/EFFECTS_CONTRACT.md
+    owner: EXP-01
+    version: 2.0
+    status: FROZEN
+    parent: VISUAL_CONTRACT
+  ASSET_CONTRACT:
+    path: docs/collaboration/ASSET_CONTRACT.md
+    owner: EXP-01
+    version: 1.0
+    status: FROZEN
+    parent: REFERENCE_CONTRACT+VISUAL_CONTRACT
+  HOME_IMPLEMENTATION_CONTRACT:
+    path: docs/collaboration/HOME_IMPLEMENTATION_CONTRACT.md
+    owner: EXP-01
+    version: 2.0
+    status: FROZEN
+    parent: ALL_EXP01_CONTRACTS
+  HOME_ASSET_MANIFEST:
+    path: docs/collaboration/HOME_ASSET_MANIFEST.yaml
+    owner: EXP-01
+    version: 1.1
+    status: FROZEN
+    kind: implementation_data
+golden_reference:
+  file: index.html
+  status: READY_FOR_V2_CODEX_IMPLEMENTATION
+  human_gate: REQUIRED_ONCE_AFTER_RENDERED_QA
+  propagation_blocked: true
+allowed_statuses:
+- DRAFT
+- APPROVED
+- FROZEN
+- SUPERSEDED
+deviations:
+  DR-001:
+    path: docs/collaboration/deviations/EXP-01-DR-001-industrial-maison-rouge.md
+    decision: EXTEND_CONTRACT
+    scope: creative direction v1 -> v2
+  DR-002:
+    path: docs/collaboration/deviations/EXP-01-DR-002-level-4-cinematic-motion.md
+    decision: LOCAL_VARIANT
+    scope: Home-only presentation JavaScript
