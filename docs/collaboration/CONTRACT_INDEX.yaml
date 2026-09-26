@@ -4,21 +4,22 @@ contracts:
   REFERENCE_CONTRACT:
     path: docs/collaboration/REFERENCE_CONTRACT.md
     owner: EXP-01
-    version: 0.1
-    status: DRAFT
+    version: 1.0
+    status: FROZEN
   VISUAL_CONTRACT:
     path: docs/collaboration/VISUAL_CONTRACT.md
     owner: EXP-01
-    version: 0.1
-    status: DRAFT
+    version: 1.0
+    status: FROZEN
   COPYWRITING_STANDARD:
     path: docs/collaboration/COPYWRITING_STANDARD.md
     owner: EXP-01
-    version: 0.1
-    status: DRAFT
+    version: 1.0
+    status: FROZEN
   PRODUCT_CONTENT_CONTRACT:
     path: docs/collaboration/PRODUCT_CONTENT_CONTRACT.yaml
     owner: EXP-01
-    version: 0.1
-    status: DRAFT
+    version: 1.0
+    status: FROZEN
 allowed_statuses: [DRAFT, APPROVED, FROZEN, SUPERSEDED]
+lock_note: "EXP-01 creative contracts frozen on feature/home; propagation remains blocked until the Home Golden Reference receives the final human approval gate."
