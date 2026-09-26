@@ -1,0 +1,21 @@
+contract_version: 1
+scope_kind: workspace_operating_contract
+process_id: DISC-02
+objective: "Implement Catalog and Product within locked transversal contracts."
+included: ["catalog.html","product.html","owned PRs and handoff"]
+excluded: ["Home","Cart","Checkout","frozen contracts","cross-page SEO"]
+decision_owner: ORCH-00
+sources_of_truth: ["docs/collaboration/COLLABORATIVE_EXECUTION_PLAN.md", "docs/collaboration/CONTRACT_INDEX.yaml", "Control Tower assignment.yaml and RUBRIC_CONTRACT.yaml"]
+constraints: ["HTML and Tailwind only", "preserve real contributor attribution", "one writer per file at a time", "no unsupported rubric PASS"]
+assumptions: ["three-person team; identities pending", "foundation merged in PR #1"]
+unknowns: ["real contributor identities", "creative approvals pending EXP-01"]
+deliverables: ["catalog.html","product.html"]
+definition_of_done: ["owned deliverables reviewed", "contract conformance evidenced", "required viewport checks recorded", "PR and knowledge handoff complete"]
+acceptance_criteria: ["rubric coverage R08-R12 and shared R01-R03,R07,R17-R19", "no unauthorized writes", "current evidence bound to commit"]
+protected_behavior: ["five linked static views", "shared semantic navigation", "existing feature branch history"]
+forbidden_regressions: ["HTML outside owned scope before handoff", "broken navigation", "framework or backend introduction", "fabricated claims"]
+human_gates: ["real teammate identity/access", "subjective creative approval when applicable"]
+stop_conditions: ["missing prerequisite contract lock", "ownership collision", "contradictory rubric", "unsafe overwrite", "missing evidence"]
+escalation_conditions: ["contract deviation", "three similar repair failures", "capability gap", "destructive decision"]
+specialist_refs: ["docs/collaboration/work-packages/DISC-02.md", "docs/collaboration/DEVIATION_RESCUE_PROTOCOL.md"]
+continuation: "BLOCKED until all required transversal contracts APPROVED/FROZEN; hand off to INTEG-04"

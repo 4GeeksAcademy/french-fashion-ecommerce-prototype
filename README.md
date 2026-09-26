@@ -1,41 +1,10 @@
-# HTML Hello
+# French Fashion E-commerce Prototype
 
-The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
+Three-contributor, static 4Geeks Academy fashion storefront prototype built with semantic HTML and Tailwind CSS browser build. The five required linked views are [Home](index.html), [Catalog](catalog.html), [Product](product.html), [Cart](cart.html), and [Checkout](checkout.html). These files currently contain the merged shared foundation; feature implementation and rubric validation remain pending.
 
-> There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
+## Work on the assignment
+Start with [Collaborative Execution Plan](docs/collaboration/COLLABORATIVE_EXECUTION_PLAN.md), [Contract Index](docs/collaboration/CONTRACT_INDEX.yaml), and [Team Workflow](TEAM_WORKFLOW.md). Read your [work package](docs/collaboration/work-packages/EXP-01.md) and scope contract before editing a view. The four transversal creative contracts are DRAFT; Catalog and Cart contributors must wait for their lock.
 
-## What to do next?
+Use a branch and pull request for each major view or feature, synchronize with main before review, and preserve each contributor's authorship. The six prepared feature branches have no independent implementation yet. Follow the [PR template](.github/pull_request_template.md). Do not claim rubric PASS from page-shell existence. The Control Tower assignment manifest owns academic state and evidence.
 
-Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
-
-```bash
-$ pip3 install flask && python3 server.py
-```
-
-- You can create as many HTML files as you want.
-- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
-
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
-
-- If you want to use Tailwind CSS, add it optionally via the official Tailwind CSS v4 CDN inside the same `<head>`:
-
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
-
-### Contributors
-
-This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/html-hello/graphs/contributors).
-
-You can find other templates and resources like this at the [school's GitHub page](https://github.com/4geeksacademy/).
+No React, backend, database, real authentication/payment, persistent cart, or new runtime service is part of this static prototype.
