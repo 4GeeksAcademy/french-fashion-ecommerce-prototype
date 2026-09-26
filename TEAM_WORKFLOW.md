@@ -1,46 +1,15 @@
-# Team Workflow
+# Team workflow
 
-This repository is a three-person academic collaboration. The graded Git workflow is part of the deliverable.
+Three people collaborate through process responsibility and view ownership. The existing shared foundation was merged in PR #1. Its six prepared feature branches remain untouched until the applicable work package is ready.
 
-## Shared foundation
-Branch: `feature/shared-foundation`
+| Process | Responsibility | View/branch lineage |
+| --- | --- | --- |
+| ORCH-00 | Decisions, governance, contracts gate, PR coordination | no domain implementation |
+| EXP-01 | References, four creative contracts, Home golden reference | feature/home |
+| DISC-02 | Catalog and Product | feature/catalog, feature/product |
+| TRAN-03 | Cart and Checkout | feature/cart, feature/checkout |
+| INTEG-04 | SEO, Schema.org, cross-page integration after handoff | feature/seo-schema |
 
-Purpose:
-- create the five required HTML files;
-- establish the shared head/meta pattern;
-- load Tailwind CSS;
-- establish common navbar/footer markup;
-- establish page-to-page navigation and base visual grammar.
+Read [execution plan](docs/collaboration/COLLABORATIVE_EXECUTION_PLAN.md), your [scope](docs/collaboration/scopes/EXP-01.yaml), and matching work package. Actual human GitHub identities are pending; do not fabricate contributor attribution. ORCH-00 binds work packages to the real three-person team when access is confirmed.
 
-Merge this branch first.
-
-## View ownership
-After the shared foundation is merged, each contributor starts from updated `main`.
-
-### Member 1
-- `feature/home` — Home page
-- later: `feature/seo-schema` — cross-page SEO and Schema.org reconciliation
-
-### Member 2
-- `feature/catalog` — Catalog page
-- `feature/product` — Product page
-
-### Member 3
-- `feature/cart` — Cart page
-- `feature/checkout` — Checkout page
-
-## Required PR routine
-For every feature branch:
-
-1. Work only on the assigned view/feature.
-2. Make clear logical commits.
-3. Before opening the PR, update the branch from `main`.
-4. Resolve conflicts collaboratively; never overwrite another contributor's work with force-push.
-5. Open a PR describing:
-   - what changed;
-   - which rubric requirements it satisfies;
-   - what was tested.
-6. Merge only after the branch is current and the change is reviewable.
-
-## Scope guard
-Use HTML + Tailwind CSS only for the academic prototype. Do not add React, Vue, Angular, a backend, database, real authentication, persistent cart logic, or payment processing.
+Each major part uses a clear branch and PR. Update from main before review, preserve others' commits, resolve conflicts together, and do not force-push over teammate work. The PR states rubric coverage, contract conformance, tested viewports, evidence, deviations, limitations, and handoff. Only ORCH-00 accepts contract changes. DISC-02 and TRAN-03 may not start their view work until transversal contracts are locked. INTEG-04 starts after both handoffs.

@@ -1,0 +1,17 @@
+version: 0.1
+status: DRAFT
+owner: EXP-01
+purpose: Canonical product data shape; no product records approved.
+product_schema:
+  sku: {type: string, required: true, rule: "stable unique reference; format TO_LOCK_IN_EXP01"}
+  name: {type: string, required: true, rule: "follow COPYWRITING_STANDARD"}
+  category: {type: string, required: true, rule: "approved taxonomy TO_LOCK_IN_EXP01"}
+  price: {type: number, required: true, rule: "nonnegative amount; display per currency rule"}
+  currency: {type: string, required: true, rule: "ISO 4217 code TO_LOCK_IN_EXP01"}
+  sizes: {type: list_of_strings, required: true, rule: "available sizes; vocabulary TO_LOCK_IN_EXP01"}
+  materials: {type: list_of_strings, required: true, rule: "factually sourced material terms"}
+  short_description: {type: string, required: true, rule: "approved copy standard"}
+  long_description: {type: string, required: true, rule: "approved copy standard"}
+  recommended_use: {type: string, required: true, rule: "suggestion, not unsupported claim"}
+  image_alt: {type: string, required: true, rule: "visible attributes per alt text rule"}
+records: []

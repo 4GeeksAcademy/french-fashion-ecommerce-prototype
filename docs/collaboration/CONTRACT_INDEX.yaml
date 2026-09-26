@@ -1,0 +1,24 @@
+version: 1
+mode: COLLABORATIVE_MODE_PILOT
+contracts:
+  REFERENCE_CONTRACT:
+    path: docs/collaboration/REFERENCE_CONTRACT.md
+    owner: EXP-01
+    version: 0.1
+    status: DRAFT
+  VISUAL_CONTRACT:
+    path: docs/collaboration/VISUAL_CONTRACT.md
+    owner: EXP-01
+    version: 0.1
+    status: DRAFT
+  COPYWRITING_STANDARD:
+    path: docs/collaboration/COPYWRITING_STANDARD.md
+    owner: EXP-01
+    version: 0.1
+    status: DRAFT
+  PRODUCT_CONTENT_CONTRACT:
+    path: docs/collaboration/PRODUCT_CONTENT_CONTRACT.yaml
+    owner: EXP-01
+    version: 0.1
+    status: DRAFT
+allowed_statuses: [DRAFT, APPROVED, FROZEN, SUPERSEDED]
