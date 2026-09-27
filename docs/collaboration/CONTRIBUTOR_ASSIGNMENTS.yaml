@@ -1,0 +1,43 @@
+version: 1
+assignment_id: 4g-006-fashion-ecommerce-prototype
+mode: COLLABORATIVE_MODE_PILOT
+
+contributors:
+  DISC-02:
+    display_name: Ruth
+    github_username: ruthcarol281076
+    identity_status: ASSIGNED_USERNAME_SUPPLIED
+    access_status: UNVERIFIED
+    responsibility: Discovery / Merchandising
+    owns:
+      - catalog.html
+      - product.html
+    branches:
+      - feature/catalog
+      - feature/product
+    start_file: docs/collaboration/onboarding/02_RUTH_COPIA_ESTE_PROMPT_CATALOGO_Y_PRODUCTO.md
+    activation_gate:
+      - verify_repository_access
+      - branches_synced_from_current_main
+
+  TRAN-03:
+    display_name: Rodrigo
+    github_username: null
+    identity_status: ASSIGNED_NAME_USERNAME_PENDING
+    access_status: PENDING
+    responsibility: Transaction / Forms
+    owns:
+      - cart.html
+      - checkout.html
+    branches:
+      - feature/cart
+      - feature/checkout
+    start_file: docs/collaboration/onboarding/03_RODRIGO_COPIA_ESTE_PROMPT_CARRITO_Y_CHECKOUT.md
+    activation_gate:
+      - github_username_supplied
+      - verify_repository_access
+      - branches_synced_from_current_main
+
+authority:
+  assignment_owner: ORCH-00
+  note: "Human assignment and repository authorization are distinct. A named contributor is not ACTIVE until access and branch readiness are verified."
