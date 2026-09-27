@@ -7,7 +7,8 @@ contributors:
     display_name: Ruth
     github_username: ruthcarol281076
     identity_status: ASSIGNED_USERNAME_SUPPLIED
-    access_status: UNVERIFIED
+    access_status: READ_ONLY_VERIFIED
+    write_access_status: PENDING_VERIFICATION
     responsibility: Discovery / Merchandising
     owns:
       - catalog.html
@@ -16,9 +17,12 @@ contributors:
       - feature/catalog
       - feature/product
     start_file: docs/collaboration/onboarding/02_RUTH_COPIA_ESTE_PROMPT_CATALOGO_Y_PRODUCTO.md
+    branch_status: SYNCED_TO_ONBOARDING_MAIN
+    branch_sync_sha: fd81bc1cd8e190b068a4fb8b04e5eee8ee565752
     activation_gate:
-      - verify_repository_access
-      - branches_synced_from_current_main
+      - verify_active_github_identity_is_ruthcarol281076
+      - verify_repository_write_access
+      - recheck_branches_against_current_main_before_edit
 
   TRAN-03:
     display_name: Rodrigo
@@ -33,11 +37,14 @@ contributors:
       - feature/cart
       - feature/checkout
     start_file: docs/collaboration/onboarding/03_RODRIGO_COPIA_ESTE_PROMPT_CARRITO_Y_CHECKOUT.md
+    branch_status: SYNCED_TO_ONBOARDING_MAIN
+    branch_sync_sha: fd81bc1cd8e190b068a4fb8b04e5eee8ee565752
     activation_gate:
       - github_username_supplied
-      - verify_repository_access
-      - branches_synced_from_current_main
+      - verify_active_github_identity_matches_rodrigo
+      - verify_repository_write_access
+      - recheck_branches_against_current_main_before_edit
 
 authority:
   assignment_owner: ORCH-00
-  note: "Human assignment and repository authorization are distinct. A named contributor is not ACTIVE until access and branch readiness are verified."
+  note: "Human assignment, read access, write authorization and ACTIVE implementation are separate states. Every contributor-specific activation gate must be satisfied before implementation."

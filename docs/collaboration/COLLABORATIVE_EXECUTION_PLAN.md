@@ -8,10 +8,11 @@ This is a case-specific COLLABORATIVE_MODE_PILOT for the static five-view assign
 - EXP-01: COMPLETE.
 - Home Golden Reference: APPROVED.
 - Transversal contracts: FROZEN and released for downstream consumption.
-- DISC-02 / TRAN-03: READY_FOR_ACTIVATION, pending real teammate identity/access binding and branch sync from current `main`.
-- Ruth assigned to DISC-02; username `ruthcarol281076` supplied; access verification UNVERIFIED.
+- Onboarding PR #6: MERGED; [contributor assignments](CONTRIBUTOR_ASSIGNMENTS.yaml) and [onboarding docs](onboarding/00_EMPIEZA_AQUI_RUTH_Y_RODRIGO.md) published.
+- Four contributor branches synchronized to `fd81bc1cd8e190b068a4fb8b04e5eee8ee565752`; re-fetch and re-check against current main immediately before editing.
+- DISC-02 / TRAN-03: READY_FOR_ACTIVATION only after contributor-specific authorization gates and branch freshness checks pass.
+- Ruth assigned to DISC-02 as `ruthcarol281076`; READ verified / WRITE pending verification. Active GitHub identity must match Ruth.
 - Rodrigo assigned to TRAN-03; GitHub username/access PENDING.
-- [Contributor assignments](CONTRIBUTOR_ASSIGNMENTS.yaml) and [onboarding files](onboarding/00_EMPIEZA_AQUI_RUTH_Y_RODRIGO.md) are available.
 - INTEG-04: PARKED until both contributor handoffs are accepted.
 
 ## Complete system architecture

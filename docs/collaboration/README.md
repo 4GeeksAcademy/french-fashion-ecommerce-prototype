@@ -5,6 +5,12 @@
 Abre [EMPIEZA AQUÍ — Ruth y Rodrigo](onboarding/00_EMPIEZA_AQUI_RUTH_Y_RODRIGO.md). Después abre tu prompt: [Ruth](onboarding/02_RUTH_COPIA_ESTE_PROMPT_CATALOGO_Y_PRODUCTO.md) o [Rodrigo](onboarding/03_RODRIGO_COPIA_ESTE_PROMPT_CARRITO_Y_CHECKOUT.md).
 Ambos usan la [guía de ramas](onboarding/01_GUIA_FACIL_PARA_TRABAJAR_EN_TU_RAMA.md). Guía rápida existente: [PDF](onboarding/04_GUIA_RAPIDA_EQUIPO.pdf) / [DOCX](onboarding/04_GUIA_RAPIDA_EQUIPO.docx).
 
+## Current activation status
+
+- Ruth → DISC-02 → `ruthcarol281076`: READ verified, WRITE pending verification; implementation requires that active GitHub identity and WRITE capability.
+- Rodrigo → TRAN-03 → GitHub username/access pending; implementation requires a supplied username, matching active identity and WRITE capability.
+- Four contributor branches synchronized to onboarding main `fd81bc1cd8e190b068a4fb8b04e5eee8ee565752`. Re-fetch and recheck current main immediately before implementation; all process-specific activation gates must pass.
+
 ## Qué debe leer un agente
 
 Lee [AGENTS.md](../../AGENTS.md), las [asignaciones de colaboradores](CONTRIBUTOR_ASSIGNMENTS.yaml), el scope y work package del proceso y los contratos congelados.

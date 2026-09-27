@@ -6,4 +6,4 @@ Respect the process write owner and gate. ORCH-00 decides; EXP-01 alone publishe
 
 If a rule is ambiguous, request a decision through ORCH-00 and record a deviation. Stop on ownership collision, missing lock, contradictory rubric, destructive change, or evidence gap. “Done” means owned deliverables, contract conformance, viewport/test evidence, PR review, and a knowledge handoff; it never means an unsupported rubric PASS.
 
-Verify the active human/process binding before writing. If identity/access required by CONTRIBUTOR_ASSIGNMENTS.yaml is pending or unverified, implementation remains gated.
+Read CONTRIBUTOR_ASSIGNMENTS.yaml and verify the active human/process binding before writing. Implementation may begin only when every activation gate for that process is satisfied. The active authenticated GitHub identity must match the named human contributor. Read access alone is not sufficient for authentic contributor implementation; do not infer authenticated identity from git config alone.
