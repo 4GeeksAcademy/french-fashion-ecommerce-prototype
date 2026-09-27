@@ -49,10 +49,19 @@ BEFORE EDITING
 - verify the repository remote;
 - verify current branch;
 - verify git status is clean or explain any local changes;
-- verify CONTRIBUTOR_ASSIGNMENTS assigns Ruth / ruthcarol281076 to DISC-02;
 - verify frozen contracts are FROZEN;
-- verify the owned branch contains current main;
-- if repository access or branch synchronization is not valid, STOP before editing and explain exactly what is missing.
+- read CONTRIBUTOR_ASSIGNMENTS.yaml and satisfy every activation gate for this process;
+- the four contributor branches were synchronized to onboarding main fd81bc1cd8e190b068a4fb8b04e5eee8ee565752 in PR #6; initial synchronization is complete;
+- immediately before each phase, fetch origin and verify that the phase's owned branch contains current origin/main;
+- verify active authenticated GitHub identity using the authorized environment; if gh is available, use gh auth status only as an identity/session check;
+- do not infer authenticated identity from git config user.name/email;
+- verify repository WRITE/push capability without creating implementation changes, using the environment's safe/dry-run capability; a no-change result alone is not proof of WRITE authorization;
+- verify CONTRIBUTOR_ASSIGNMENTS assigns Ruth / ruthcarol281076 to DISC-02;
+- repository READ permission is already verified; WRITE authorization is PENDING_VERIFICATION and must be verified for Ruth's active account;
+- confirm active GitHub identity is ruthcarol281076; if authenticated as another user, STOP before editing rather than creating falsely attributed work;
+- check feature/catalog before Catalog and feature/product before Product; only after identity + WRITE + branch-current checks pass may implementation begin.
+
+If identity, WRITE capability or branch freshness cannot be verified, STOP implementation and explain exactly what is missing, including the exact permission blocker if WRITE is unavailable. You may read, explain and plan.
 
 WORK ORDER
 

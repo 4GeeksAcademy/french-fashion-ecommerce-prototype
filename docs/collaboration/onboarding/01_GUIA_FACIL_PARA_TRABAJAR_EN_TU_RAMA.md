@@ -14,8 +14,16 @@ Si hay cambios locales, pide al agente que los explique antes de cambiar de rama
 Ruth usa `git switch feature/catalog` para Catálogo y `git switch feature/product` para Producto.
 Rodrigo usa `git switch feature/cart` para Carrito y `git switch feature/checkout` para Checkout.
 
-La rama debe haber sido sincronizada por este onboarding. Si no sabes si está lista, pide al agente que compruebe que contiene `origin/main`; no adivines.
-Ruth debe verificar su acceso. Rodrigo puede leer, preguntar y planear, pero no implementar hasta que su usuario y acceso estén verificados.
+Las cuatro ramas fueron sincronizadas en PR #6 a `fd81bc1cd8e190b068a4fb8b04e5eee8ee565752`. Antes de cada implementación, ejecuta `git fetch origin` y pide al agente que verifique que la rama contiene `origin/main` actual; no adivines.
+
+Ruth tiene permiso READ verificado; su autorización WRITE está pendiente de verificación. Rodrigo puede leer, preguntar y planear, pero no implementar hasta registrar su usuario y verificar identidad activa y escritura.
+
+Antes de programar, el agente debe:
+
+1. Comprobar que la autenticación actual de GitHub corresponde a tu propia cuenta: `ruthcarol281076` para Ruth; el usuario registrado para Rodrigo.
+2. Si `gh` está disponible, usar `gh auth status` sólo como comprobación de identidad/sesión. `git config user.name/email` no demuestra la identidad autenticada.
+3. Verificar autorización de push sin crear cambios de implementación, mediante una capacidad segura/dry-run del entorno. Un resultado sin cambios no demuestra por sí solo permiso WRITE: la comprobación debe confirmar autorización de escritura para esa cuenta y repositorio.
+4. Si la identidad no coincide, no se puede verificar WRITE o la rama no contiene el main actual, detener la implementación y explicar exactamente qué falta. Si no hay capacidad de escritura, informar el bloqueo de permiso exacto.
 
 ## Durante el trabajo
 

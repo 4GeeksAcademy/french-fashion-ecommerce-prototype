@@ -48,15 +48,21 @@ BEFORE EDITING
 
 - verify the repository remote;
 - verify current branch;
-- verify git status;
-- verify CONTRIBUTOR_ASSIGNMENTS assigns Rodrigo to TRAN-03;
-- verify Rodrigo's GitHub username/access has been filled and verified;
+- verify git status is clean or explain any local changes;
 - verify frozen contracts are FROZEN;
-- verify the owned branch contains current main.
+- read CONTRIBUTOR_ASSIGNMENTS.yaml and satisfy every activation gate for this process;
+- the four contributor branches were synchronized to onboarding main fd81bc1cd8e190b068a4fb8b04e5eee8ee565752 in PR #6; initial synchronization is complete;
+- immediately before each phase, fetch origin and verify that the phase's owned branch contains current origin/main;
+- verify active authenticated GitHub identity using the authorized environment; if gh is available, use gh auth status only as an identity/session check;
+- do not infer authenticated identity from git config user.name/email;
+- verify repository WRITE/push capability without creating implementation changes, using the environment's safe/dry-run capability; a no-change result alone is not proof of WRITE authorization;
+- verify CONTRIBUTOR_ASSIGNMENTS assigns Rodrigo to TRAN-03;
+- Rodrigo's GitHub username/access remain PENDING; the username must be supplied before implementation;
+- verify active GitHub identity matches Rodrigo's supplied username; if authenticated as another user, STOP before editing rather than creating falsely attributed work;
+- verify repository WRITE capability for Rodrigo's own account;
+- check feature/cart before Cart and feature/checkout before Checkout; only after username + matching identity + WRITE + branch-current checks pass may implementation begin.
 
-If Rodrigo's username/access is still PENDING:
-you may read, explain and plan, but DO NOT edit implementation yet.
-State exactly what must be completed to activate TRAN-03.
+If username, matching active identity, WRITE capability or branch freshness is still pending or cannot be verified, you may read, explain and plan, but DO NOT edit implementation. State exactly what must be completed to activate TRAN-03, including the exact permission blocker if WRITE is unavailable.
 
 WORK ORDER
 
