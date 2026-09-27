@@ -9,6 +9,9 @@ This is a case-specific COLLABORATIVE_MODE_PILOT for the static five-view assign
 - Home Golden Reference: APPROVED.
 - Transversal contracts: FROZEN and released for downstream consumption.
 - DISC-02 / TRAN-03: READY_FOR_ACTIVATION, pending real teammate identity/access binding and branch sync from current `main`.
+- Ruth assigned to DISC-02; username `ruthcarol281076` supplied; access verification UNVERIFIED.
+- Rodrigo assigned to TRAN-03; GitHub username/access PENDING.
+- [Contributor assignments](CONTRIBUTOR_ASSIGNMENTS.yaml) and [onboarding files](onboarding/00_EMPIEZA_AQUI_RUTH_Y_RODRIGO.md) are available.
 - INTEG-04: PARKED until both contributor handoffs are accepted.
 
 ## Complete system architecture
