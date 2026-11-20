@@ -13,6 +13,16 @@ Evidence is bound to the commit above. Any later change to `catalog.html` or `pr
 - Local server: `python3 -m http.server 3000` at the repository root.
 - Scripts in `tests/` reference the Codespace paths `/workspaces/...` and `/tmp/qa/`. Re-run with `NODE_PATH` pointing to a Playwright install.
 
+## Activate the pages in this Codespace
+
+1. Check out the branch: `git checkout feature/integration` (commit `2a9f701` or later).
+2. From the repository root, start the server: `python3 -m http.server 3000`.
+3. Open the pages in the browser: `"$BROWSER" http://localhost:3000/catalog.html`, or open the forwarded port 3000 from the Ports panel.
+4. Product page: `http://localhost:3000/product.html?sku=AV-FW-001` (any of the 20 SKUs in the contract).
+5. If an older version appears, hard reload (Ctrl+Shift+R). The server serves the working tree, so the checked-out branch decides what is shown.
+
+Tailwind loads from a CDN, so the page needs internet access. Stop the server with Ctrl+C.
+
 ## Viewports
 
 | Viewport | Catalog | Product |
