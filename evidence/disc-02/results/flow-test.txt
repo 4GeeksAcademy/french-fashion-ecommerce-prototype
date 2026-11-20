@@ -1,0 +1,6 @@
+catalog cards linked: 20
+card->product mismatches: 0
+entry product: Ceinture Ligne AV-AC-003
+bad sku visible not-found: true
+js errors: 0 []
+exit 0

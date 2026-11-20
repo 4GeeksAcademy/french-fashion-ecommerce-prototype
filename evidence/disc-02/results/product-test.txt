@@ -1,0 +1,5 @@
+390x844 {"scrollW":390,"clientW":390,"imgLoaded":true,"columns":1,"imgShareOfGrid":"100%","h1Font":"Didot, \"Bodoni MT\", "}
+768x1024 {"scrollW":768,"clientW":768,"imgLoaded":true,"columns":1,"imgShareOfGrid":"100%","h1Font":"Didot, \"Bodoni MT\", "}
+1440x900 {"scrollW":1440,"clientW":1440,"imgLoaded":true,"columns":2,"imgShareOfGrid":"48%","h1Font":"Didot, \"Bodoni MT\", "}
+internal links: #main-content, catalog.html, index.html#new-arrivals, index.html, cart.html
+exit 0

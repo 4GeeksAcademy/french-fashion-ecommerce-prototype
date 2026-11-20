@@ -1,0 +1,20 @@
+390 AV-FW-001 {"title":"Sillage Loafer — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":false,"viewVisible":true,"imgVisible":true,"imgSrc":"assets/home/products/av-fw-001-sillage-loafer.webp","phVisible":false,"sizes":7,"overflow":0,"cols":1}
+390 AV-AC-003 {"title":"Ceinture Ligne — Atelier Vérité","h1":"Ceinture Ligne","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":3,"overflow":0,"cols":1}
+390 AV-FW-005 {"title":"Ligne Derby — Atelier Vérité","h1":"Ligne Derby","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":7,"overflow":0,"cols":1}
+390 AV-AC-005 {"title":"Pochette Atelier — Atelier Vérité","h1":"Pochette Atelier","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":1,"overflow":0,"cols":1}
+390 AV-XX-999 {"title":"Product not found — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":true,"viewVisible":false,"imgVisible":false,"imgSrc":null,"phVisible":false,"sizes":0,"overflow":0,"cols":1}
+390 (default) {"title":"Sillage Loafer — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":false,"viewVisible":true,"imgVisible":true,"imgSrc":"assets/home/products/av-fw-001-sillage-loafer.webp","phVisible":false,"sizes":7,"overflow":0,"cols":1}
+768 AV-FW-001 {"title":"Sillage Loafer — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":false,"viewVisible":true,"imgVisible":true,"imgSrc":"assets/home/products/av-fw-001-sillage-loafer.webp","phVisible":false,"sizes":7,"overflow":0,"cols":1}
+768 AV-AC-003 {"title":"Ceinture Ligne — Atelier Vérité","h1":"Ceinture Ligne","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":3,"overflow":0,"cols":1}
+768 AV-FW-005 {"title":"Ligne Derby — Atelier Vérité","h1":"Ligne Derby","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":7,"overflow":0,"cols":1}
+768 AV-AC-005 {"title":"Pochette Atelier — Atelier Vérité","h1":"Pochette Atelier","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":1,"overflow":0,"cols":1}
+768 AV-XX-999 {"title":"Product not found — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":true,"viewVisible":false,"imgVisible":false,"imgSrc":null,"phVisible":false,"sizes":0,"overflow":0,"cols":1}
+768 (default) {"title":"Sillage Loafer — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":false,"viewVisible":true,"imgVisible":true,"imgSrc":"assets/home/products/av-fw-001-sillage-loafer.webp","phVisible":false,"sizes":7,"overflow":0,"cols":1}
+1440 AV-FW-001 {"title":"Sillage Loafer — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":false,"viewVisible":true,"imgVisible":true,"imgSrc":"assets/home/products/av-fw-001-sillage-loafer.webp","phVisible":false,"sizes":7,"overflow":0,"cols":2}
+1440 AV-AC-003 {"title":"Ceinture Ligne — Atelier Vérité","h1":"Ceinture Ligne","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":3,"overflow":0,"cols":2}
+1440 AV-FW-005 {"title":"Ligne Derby — Atelier Vérité","h1":"Ligne Derby","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":7,"overflow":0,"cols":2}
+1440 AV-AC-005 {"title":"Pochette Atelier — Atelier Vérité","h1":"Pochette Atelier","notFoundVisible":false,"viewVisible":true,"imgVisible":false,"imgSrc":null,"phVisible":true,"sizes":1,"overflow":0,"cols":2}
+1440 AV-XX-999 {"title":"Product not found — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":true,"viewVisible":false,"imgVisible":false,"imgSrc":null,"phVisible":false,"sizes":0,"overflow":0,"cols":3}
+1440 (default) {"title":"Sillage Loafer — Atelier Vérité","h1":"Sillage Loafer","notFoundVisible":false,"viewVisible":true,"imgVisible":true,"imgSrc":"assets/home/products/av-fw-001-sillage-loafer.webp","phVisible":false,"sizes":7,"overflow":0,"cols":2}
+failures: 0
+exit 0

@@ -5,37 +5,322 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catalog — Atelier Vérité</title>
   <meta name="description" content="Browse the Atelier Vérité fashion catalog by category and size.">
+  <style>
+    .font-display { font-family: Didot, "Bodoni MT", "Times New Roman", serif; }
+    .font-utility { font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif; }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="min-h-screen bg-stone-50 text-stone-950 antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Skip to content</a>
-  <header class="border-b border-stone-200 bg-white">
-    <nav class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between" aria-label="Primary">
-      <a href="index.html" class="text-xl font-semibold tracking-[0.2em]">ATELIER VÉRITÉ</a>
-      <form class="w-full lg:max-w-md" role="search">
-        <label class="sr-only" for="site-search">Search products</label>
-        <input id="site-search" name="q" type="search" placeholder="Search the collection" class="w-full rounded-full border border-stone-300 bg-stone-50 px-4 py-2 text-sm outline-none focus:border-stone-950">
-      </form>
-      <div class="flex items-center gap-4 text-sm">
-        <a href="catalog.html" class="font-medium underline">Catalog</a>
-        <a href="cart.html" class="hover:underline">Cart</a>
-        <a href="#" class="hover:underline">Account</a>
+<body class="min-h-screen bg-[#E8E1D8] font-utility text-[#11110F] antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-[#FFFDF8] focus:px-4 focus:py-2 focus:text-[#11110F]">Skip to content</a>
+  <header class="border-b border-[#77726C] bg-[#11110F] text-[#FFFDF8]">
+    <nav class="mx-auto grid max-w-[1600px] gap-4 px-4 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] lg:items-center" aria-label="Primary">
+      <div class="flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-[0.16em]">
+        <a href="catalog.html" class="underline underline-offset-4" aria-current="page">Catalog</a>
+        <a href="index.html#new-arrivals" class="underline-offset-4 hover:underline">New arrivals</a>
+      </div>
+      <a href="index.html" class="font-display text-center text-2xl tracking-[0.2em] lg:text-3xl">ATELIER VÉRITÉ</a>
+      <div class="flex items-center gap-5 text-xs uppercase tracking-[0.16em] lg:justify-end">
+        <details class="relative">
+          <summary class="cursor-pointer list-none underline-offset-4 hover:underline">Account</summary>
+          <div class="absolute right-0 z-10 mt-3 w-64 border border-[#A6A19A] bg-[#11110F] p-4 text-sm normal-case tracking-normal text-[#A6A19A]">Static prototype. No sign-in is connected.</div>
+        </details>
+        <a href="cart.html" class="underline-offset-4 hover:underline">Cart</a>
       </div>
     </nav>
+    <form class="border-t border-[#77726C] px-4 py-3 sm:px-8" role="search" action="catalog.html" method="get">
+      <div class="mx-auto flex max-w-[1600px] gap-2">
+        <label class="sr-only" for="site-search">Search products</label>
+        <input id="site-search" name="q" type="search" placeholder="Search the collection" class="min-w-0 flex-1 border border-[#77726C] bg-transparent px-4 py-2 text-sm text-[#FFFDF8] placeholder:text-[#A6A19A] focus:border-[#FFFDF8] focus:outline-none">
+        <button type="submit" class="bg-[#FFFDF8] px-4 py-2 text-xs uppercase tracking-[0.16em] text-[#11110F] hover:bg-[#E8E1D8]">Search</button>
+      </div>
+    </form>
   </header>
   <main id="main-content">
-    <section class="mx-auto max-w-7xl px-4 py-12" aria-labelledby="catalog-title">
-      <p class="mb-3 text-sm uppercase tracking-[0.24em] text-stone-500">Catalog</p>
-      <h1 id="catalog-title" class="text-4xl font-semibold tracking-tight">Catalog view foundation</h1>
-      <p class="mt-4 max-w-2xl text-stone-600">The Catalog feature branch will add category and size filters plus the required 20-product responsive grid.</p>
+    <section class="border-b border-[#77726C] px-4 pb-10 pt-12 sm:px-8 lg:pb-14 lg:pt-16" aria-labelledby="catalog-title">
+      <div class="mx-auto max-w-[1600px]">
+        <p class="mb-4 text-xs uppercase tracking-[0.2em] text-[#77726C]">Catalog</p>
+        <h1 id="catalog-title" class="font-display text-[3.15rem] leading-[0.92] sm:text-[4.6rem] lg:text-[6.5rem]">Browse catalog</h1>
+        <p class="mt-5 max-w-xl text-[0.9rem] leading-relaxed sm:text-base">Filter the 20 canonical pieces by category and size.</p>
+      </div>
+    </section>
+
+    <section class="bg-[#F5F0E8] px-4 py-8 sm:px-8" aria-label="Filters">
+      <form id="catalog-filters" class="mx-auto grid max-w-[1600px] gap-8 lg:grid-cols-[2fr_1fr]">
+        <fieldset class="min-w-0">
+          <legend class="text-xs uppercase tracking-[0.16em]">Category</legend>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <label class="cursor-pointer border border-[#11110F] px-4 py-2 text-xs uppercase tracking-[0.14em] has-[:checked]:bg-[#11110F] has-[:checked]:text-[#FFFDF8] has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-[#8B1020]"><input type="radio" name="category" value="all" class="sr-only" checked>All</label>
+            <label class="cursor-pointer border border-[#11110F] px-4 py-2 text-xs uppercase tracking-[0.14em] has-[:checked]:bg-[#11110F] has-[:checked]:text-[#FFFDF8] has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-[#8B1020]"><input type="radio" name="category" value="Footwear" class="sr-only">Footwear</label>
+            <label class="cursor-pointer border border-[#11110F] px-4 py-2 text-xs uppercase tracking-[0.14em] has-[:checked]:bg-[#11110F] has-[:checked]:text-[#FFFDF8] has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-[#8B1020]"><input type="radio" name="category" value="Shirts" class="sr-only">Shirts</label>
+            <label class="cursor-pointer border border-[#11110F] px-4 py-2 text-xs uppercase tracking-[0.14em] has-[:checked]:bg-[#11110F] has-[:checked]:text-[#FFFDF8] has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-[#8B1020]"><input type="radio" name="category" value="Pants" class="sr-only">Pants</label>
+            <label class="cursor-pointer border border-[#11110F] px-4 py-2 text-xs uppercase tracking-[0.14em] has-[:checked]:bg-[#11110F] has-[:checked]:text-[#FFFDF8] has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-[#8B1020]"><input type="radio" name="category" value="Accessories" class="sr-only">Accessories</label>
+          </div>
+        </fieldset>
+        <div>
+          <label for="size-filter" class="text-xs uppercase tracking-[0.16em]">Size</label>
+          <select id="size-filter" class="mt-3 block w-full border border-[#11110F] bg-[#FFFDF8] px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-[#8B1020]">
+            <option value="all">All sizes</option>
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>36</option>
+            <option>37</option>
+            <option>38</option>
+            <option>39</option>
+            <option>40</option>
+            <option>41</option>
+            <option>42</option>
+            <option>43</option>
+            <option>44</option>
+            <option>45</option>
+            <option>OS</option>
+          </select>
+        </div>
+      </form>
+      <p id="result-count" class="mx-auto mt-6 max-w-[1600px] text-sm" aria-live="polite">Showing 20 of 20 products</p>
+    </section>
+
+    <section class="bg-[#E8E1D8] px-4 py-10 sm:px-8 lg:py-14" aria-label="Product list">
+      <!-- Placeholder tiles stand in for products without production images in assets/home/products (ASSET_CONTRACT section 2C). -->
+      <ul class="mx-auto grid max-w-[1600px] grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <li class="product-item" data-category="Footwear" data-sizes="36 37 38 39 40 41 42">
+          <article>
+            <a href="product.html?sku=AV-FW-001" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-fw-001-sillage-loafer.webp" alt="Black low-profile loafer with a clean rounded toe" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Footwear</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Sillage Loafer</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€320</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Footwear" data-sizes="36 37 38 39 40 41 42 43 44">
+          <article>
+            <a href="product.html?sku=AV-FW-002" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-fw-002-rivage-sneaker.webp" alt="Neutral low-top sneaker with tonal paneling" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Footwear</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Rivage Sneaker</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€210</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Footwear" data-sizes="36 37 38 39 40 41 42">
+          <article>
+            <a href="product.html?sku=AV-FW-003" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-fw-003-oree-ankle-boot.webp" alt="Dark ankle boot with a straight shaft and simple sole" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Footwear</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Orée Ankle Boot</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€390</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Footwear" data-sizes="36 37 38 39 40 41">
+          <article>
+            <a href="product.html?sku=AV-FW-004" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Dark open-back mule with a squared toe" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Footwear</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Élan Mule</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€240</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Footwear" data-sizes="39 40 41 42 43 44 45">
+          <article>
+            <a href="product.html?sku=AV-FW-005" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Black lace-up derby shoe with a broad rounded toe" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Footwear</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Ligne Derby</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€340</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Shirts" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-SH-001" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-sh-001-chemise-epure.webp" alt="White oversized button-up shirt with a clean collar" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Shirts</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Chemise Épure</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€185</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Shirts" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-SH-002" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-sh-002-chemise-rive.webp" alt="Light neutral relaxed shirt with a straight hem" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Shirts</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Chemise Rive</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€195</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Shirts" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-SH-003" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-sh-003-surchemise-atelier.webp" alt="Structured neutral overshirt with two patch pockets" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Shirts</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Surchemise Atelier</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€230</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Shirts" data-sizes="XS S M L">
+          <article>
+            <a href="product.html?sku=AV-SH-004" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Fluid ivory collarless blouse with soft neckline gathers" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Shirts</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Blouse Lueur</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€210</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Shirts" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-SH-005" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Straight striped button-up shirt with crisp cuffs" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Shirts</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Chemise Trait</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€205</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Pants" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-PT-001" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-pt-001-pantalon-serein.webp" alt="Dark relaxed tailored pants with a high rise and front pleat" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Pants</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Pantalon Serein</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€240</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Pants" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-PT-002" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Neutral curved-leg pants with a clean waistband" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Pants</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Pantalon Arc</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€225</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Pants" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-PT-003" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-pt-003-jean-rive.webp" alt="Straight dark-wash jeans with a clean hem" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Pants</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Jean Rive</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€190</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Pants" data-sizes="XS S M L">
+          <article>
+            <a href="product.html?sku=AV-PT-004" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Fluid dark pleated pants with fine vertical texture" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Pants</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Pantalon Plissé</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€255</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Pants" data-sizes="XS S M L XL">
+          <article>
+            <a href="product.html?sku=AV-PT-005" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Straight cropped pants with a clean flat front" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Pants</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Pantalon Studio</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€235</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Accessories" data-sizes="OS">
+          <article>
+            <a href="product.html?sku=AV-AC-001" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-ac-001-sac-cadre.webp" alt="Structured dark rectangular shoulder bag with a narrow strap" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Accessories</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Sac Cadre</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€460</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Accessories" data-sizes="OS">
+          <article>
+            <a href="product.html?sku=AV-AC-002" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <img src="assets/home/products/av-ac-002-sac-demi-lune.webp" alt="Dark curved shoulder bag with a low rounded profile" width="1122" height="1402" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Accessories</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Sac Demi-Lune</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€420</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Accessories" data-sizes="S M L">
+          <article>
+            <a href="product.html?sku=AV-AC-003" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Narrow dark belt with a simple rectangular buckle" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Accessories</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Ceinture Ligne</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€145</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Accessories" data-sizes="OS">
+          <article>
+            <a href="product.html?sku=AV-AC-004" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Long neutral scarf with short fringe" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Accessories</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Écharpe Brume</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€160</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+        <li class="product-item" data-category="Accessories" data-sizes="OS">
+          <article>
+            <a href="product.html?sku=AV-AC-005" class="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B1020]">
+              <div role="img" aria-label="Slim dark zip pouch with a flat rectangular profile" class="aspect-[4/5] w-full bg-[#A6A19A]/40"></div>
+              <span class="mt-3 block text-[0.7rem] uppercase tracking-[0.16em] text-[#77726C]">Accessories</span>
+              <h3 class="mt-1 text-[0.92rem] font-semibold sm:text-[0.95rem] lg:text-base">Pochette Atelier</h3>
+              <span class="mt-2 flex items-center justify-between text-sm"><span>€195</span><span class="text-xs uppercase tracking-[0.14em] underline underline-offset-4 group-hover:text-[#8B1020]">View product</span></span>
+            </a>
+          </article>
+        </li>
+      </ul>
     </section>
   </main>
-  <footer class="mt-16 border-t border-stone-200 bg-stone-950 text-stone-100">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-3">
-      <section><h2 class="font-semibold">Categories</h2><ul class="mt-3 space-y-2 text-sm text-stone-300"><li><a href="catalog.html">Footwear</a></li><li><a href="catalog.html">Shirts</a></li><li><a href="catalog.html">Pants</a></li><li><a href="catalog.html">Accessories</a></li></ul></section>
-      <section><h2 class="font-semibold">Legal</h2><ul class="mt-3 space-y-2 text-sm text-stone-300"><li><a href="#">Terms and conditions</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">About the brand</a></li></ul></section>
-      <section><h2 class="font-semibold">Contact</h2><p class="mt-3 text-sm text-stone-300">bonjour@atelier-verite.example</p></section>
+  <footer class="bg-[#11110F] text-[#FFFDF8]">
+    <div class="mx-auto grid max-w-[1600px] gap-10 border-t border-[#77726C] px-4 py-12 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+      <div>
+        <p class="font-display text-xl tracking-[0.2em]">ATELIER VÉRITÉ</p>
+        <p class="mt-3 text-sm text-[#A6A19A]">A fictional contemporary French-fashion storefront created as a static academic prototype.</p>
+      </div>
+      <section aria-labelledby="footer-categories"><h2 id="footer-categories" class="text-xs uppercase tracking-[0.16em]">Categories</h2><ul class="mt-3 space-y-2 text-sm text-[#A6A19A]"><li><a class="hover:text-[#FFFDF8]" href="catalog.html">Footwear</a></li><li><a class="hover:text-[#FFFDF8]" href="catalog.html">Shirts</a></li><li><a class="hover:text-[#FFFDF8]" href="catalog.html">Pants</a></li><li><a class="hover:text-[#FFFDF8]" href="catalog.html">Accessories</a></li></ul></section>
+      <section aria-labelledby="footer-legal"><h2 id="footer-legal" class="text-xs uppercase tracking-[0.16em]">Legal</h2><ul class="mt-3 space-y-2 text-sm text-[#A6A19A]"><li><a class="hover:text-[#FFFDF8]" href="#">Terms and conditions</a></li><li><a class="hover:text-[#FFFDF8]" href="#">Privacy policy</a></li><li><a class="hover:text-[#FFFDF8]" href="#">About the brand</a></li></ul></section>
+      <section aria-labelledby="footer-contact"><h2 id="footer-contact" class="text-xs uppercase tracking-[0.16em]">Contact</h2><p class="mt-3 text-sm text-[#A6A19A]"><a class="hover:text-[#FFFDF8]" href="mailto:bonjour@atelier-verite.example">bonjour@atelier-verite.example</a></p></section>
     </div>
+    <p class="mx-auto max-w-[1600px] px-4 pb-10 text-xs text-[#A6A19A] sm:px-8">Static academic prototype. No live customer service or payment processing is connected.</p>
   </footer>
+  <script>
+    const filterForm = document.getElementById("catalog-filters");
+    const sizeFilter = document.getElementById("size-filter");
+    const productItems = document.querySelectorAll(".product-item");
+    const resultCount = document.getElementById("result-count");
+
+    function applyFilters() {
+      const category = filterForm.elements.category.value;
+      const size = sizeFilter.value;
+      let shown = 0;
+      productItems.forEach((item) => {
+        const matchesCategory = category === "all" || item.dataset.category === category;
+        const matchesSize = size === "all" || item.dataset.sizes.split(" ").includes(size);
+        item.hidden = !(matchesCategory && matchesSize);
+        if (!item.hidden) shown += 1;
+      });
+      resultCount.textContent = `Showing ${shown} of ${productItems.length} products`;
+    }
+
+    filterForm.addEventListener("change", applyFilters);
+  </script>
 </body>
 </html>
